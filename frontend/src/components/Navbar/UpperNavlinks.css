@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+.upper-nav-bar {
+    display:block;
+}
+.upper-nav-link {
+    font-family: 'Audiowide', sans-serif; 
+    font-size: 1rem;
+    color: #f0f0f0;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.upper-nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #faea0f, #ffa500);
+    transition: width 0.4s ease;
+}
+
+.upper-nav-link:hover {
+    color: #a0f78a;
+}
+
+.upper-nav-link:hover::after {
+    width: 100%;
+}

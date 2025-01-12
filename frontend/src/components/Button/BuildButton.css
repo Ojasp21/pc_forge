@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.btn{
+    position:absolute;
+    margin:auto;
+    left:0;
+    right:0;
+    top:50%;
+}
+.build-btn {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, #0d2a50, #00192e);
+    color: #d9f5ff;
+    border: 2px solid #3ca0f1;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 204, 255, 0.5), 0 0 10px rgba(0, 204, 255, 0.3);
+}
+
+.build-btn:hover {
+    background: linear-gradient(135deg, #0eb7d1, #1457ae);
+    color: #00192e;
+    border: 2px solid #81f781;
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 25px rgba(158, 241, 102, 0.7), 0 0 10px rgb(127, 202, 66);
+}
+
+.build-btn::before{
+    content:'';
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle, rgba(255,255,255,0.3), transparent);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.build-btn:hover::before{
+    opacity:1;
+    transform:translate(-50%, -50%) scale(1.4);
+}
+
+.build-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    border-image:linear-gradient(45deg, #001f3f, #3c91e6);
+    border-image-slice:1;
+    border-radius:8px;
+    transition: opacity 0.4s ease,transform 0.4s ease;
+    opacity: 0;
+    z-index: -1;
+}
+
+.build-btn:hover::after {
+    opacity: 1;
+    transform: scale(1.1);
+}

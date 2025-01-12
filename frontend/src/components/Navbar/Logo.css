@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+.href {
+    color: #fbe8d3;
+    font-size: 2.2em;  
+    font-weight: bold;
+    letter-spacing: 3px;  
+    font-family: 'Audiowide', sans-serif;
+    text-transform: uppercase;  
+    transition: all 0.3s ease-in-out;  
+}
+
+.href:hover {
+    cursor: pointer;
+    color: #fbe8d3;
+    text-shadow: 0 2px 5px rgba(255, 165, 0, 0.8), 0 0 15px rgba(255, 165, 0, 0.8), 0 0 30px rgba(255, 165, 0, 0.8); 
+}
