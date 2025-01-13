@@ -5,7 +5,7 @@ import './Navlinks.css'; // Use your existing Navlinks.css
 export default function Navlinks() {
     const componentsItems = [
         { label: 'Motherboard', href: '#motherboard' },
-        { label: 'Storage and SSDs', href: '#storage' },
+        { label: 'Storage', href: '#storage' },
         { label: 'Graphics Card', href: '#graphics-card' },
     ];
 

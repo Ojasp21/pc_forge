@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
-.btn{
-    position:absolute;
-    margin:auto;
-    left:0;
-    right:0;
-    top:50%;
-}
+
 .build-btn {
     position: relative;
     z-index: 1;

@@ -17,6 +17,7 @@
     position: absolute; /* Correctly positions dropdown menu */
     top: calc(100% + 5px); /* Places the menu slightly below the nav-item */
     left: 0;
+    top:100%;
     min-width: 200px;
     z-index: 1000;
     padding: 10px 0;
@@ -46,7 +47,6 @@
 }
 
 .nav-item .dropdown-item:hover {
-    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
     color: #FFC000;
     text-shadow: 0 0 8px #00d4ff, 0 0 12px #ffffff; /* Glow effect */
     border-radius: 5px;

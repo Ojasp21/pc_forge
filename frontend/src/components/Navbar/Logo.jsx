@@ -1,6 +1,7 @@
 import './Logo.css'
+import { Link } from "react-router-dom"
 export default function Logo () {
     return (
-        <a className="href">PC Forge</a>
+        <Link to='/'><a className="logo">PC Forge</a></Link>
     )
 }

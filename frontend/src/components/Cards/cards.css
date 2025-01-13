@@ -7,9 +7,10 @@ div#card {
     border-radius: 20px;
     text-align: center;
     color: antiquewhite;
-    margin:  auto;
+    margin:auto;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.331); 
-    overflow: visible; /* Prevents overflow outside the div */
+
+    overflow: hidden; /* Prevents overflow outside the div */
     transition: transform 0.50s ease-in-out; /* Smooth scaling transition */
 }
 
@@ -18,7 +19,10 @@ div#card:hover {
     box-shadow: 5px 5px 25px #a0f78ae0;
     
 }
-
+h3{
+    margin-top:1rem;
+    font-family:;
+}
 section {
     height: 150px;
     width: 150px;
@@ -26,6 +30,7 @@ section {
     background-size: cover;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    overflow:hidden;
     box-shadow: none; /* No shadow for the image */
 }
 
