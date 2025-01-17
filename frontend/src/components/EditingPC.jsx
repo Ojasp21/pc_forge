@@ -1,5 +1,5 @@
 import React from "react";
-import "./epc.css";
+import "./EditingPC.css";
 
 const EditingPC = () => {
   return (

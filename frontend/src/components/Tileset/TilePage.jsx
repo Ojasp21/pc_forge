@@ -102,7 +102,7 @@
 
 
 
-import './tilepage.css';
+import './TilePage.css';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useParts } from '../../context/PartsContext';
