@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/styles.css" />
+    <title>PC Parts</title>
+  </head>
+  <body>
+    <h1>PC Parts</h1>
+    <div class="container">
+      <% parts.forEach(part => { %>
+      <div class="tile">
+        <a href="/part/<%= part._id %>">
+          <img src="<%= part.image_url%>" alt="<%= part.name %>" />
+          <h2><%= part.title.split(' ').slice(0, 10).join(' ') %></h2>
+          <!-- <img src="<%= part.image_url %>" alt="<%= part.name %>"> -->
+          <h3><%= part.rating %></h3>
+          <h3>Price: ₹ <%= part.price %></h3>
+        </a>
+        <p> <a href=<%=part.link%> >Link</a> </p>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>

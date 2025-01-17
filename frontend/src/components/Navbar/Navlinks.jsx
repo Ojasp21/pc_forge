@@ -4,23 +4,23 @@ import './Navlinks.css'; // Use your existing Navlinks.css
 
 export default function Navlinks() {
     const componentsItems = [
-        { label: 'Motherboard', href: '#motherboard' },
-        { label: 'Storage', href: '#storage' },
+        { label: 'Motherboard', href: 'motherboard' },
+        { label: 'Storage', href: 'storage' },
         { label: 'Graphics Card', href: '#graphics-card' },
     ];
 
     const preMadePCsItems = [
-        { label: 'Gaming', href: '#gaming' },
-        { label: 'Professional', href: '#editing' },
-        { label: 'Editing', href: '#editing' },
-        { label: 'Custom', href: '#custom' },
+        { label: 'Gaming', href: 'gaming' },
+        { label: 'Professional', href: 'editing' },
+        { label: 'Editing', href: 'editing' },
+        { label: 'Custom', href: 'custom' },
 
 
     ];
 
     const accessoriesItems = [
-        { label: 'Mouse', href: '#mouse' },
-        { label: 'Keyboard', href: '#keyboard' },
+        { label: 'Mouse', href: 'mouse' },
+        { label: 'Keyboard', href: 'keyboard' },
         { label: 'Headset', href: '#headset' },
         { label: 'Monitor', href: '#monitor' },
         { label: 'Cabinet', href: '#cabinet' },
@@ -41,7 +41,7 @@ export default function Navlinks() {
             <ul className="nav justify-content-end">
                 <Dropdown title="Components" items={componentsItems} />
                 <Dropdown title="Pre-Made PCs" items={preMadePCsItems} />
-                <Dropdown title="Accessories" items={accessoriesItems} />
+                {/* <Dropdown title="Accessories" items={accessoriesItems} /> */}
                 <Dropdown title="Mr. PC" items={mrPCItems} />
                 <li className="nav-item">
                     <a className='nav-link' href="#">Sign In</a>

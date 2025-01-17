@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import BuildButton from "../components/Button/BuildButton";
 import Allcards from "../components/Cards/Allcards";
+import PrebuildPCPage from "../components/PreBuildPCPage";
 
 const Home = () => {
   return (
@@ -15,9 +16,13 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="pre-builts bg-slate-400 h-screen w-full flex bg-black"></div>
+      <div className="pre-builts w-full flex">
 
-      <div className="footer bg-slate-600 h-[25rem] w-full flex bg-black"></div>
+        <PrebuildPCPage />
+      </div>
+
+      <div className="footer bg-slate-600 h-[25rem] w-full flex bg-black">
+      </div>
     </div>
   );
 };

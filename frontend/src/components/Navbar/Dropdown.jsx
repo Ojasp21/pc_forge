@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Dropdown.css'; // For custom dropdown styles
+import { Link } from 'react-router-dom';
 
 export default function Dropdown({ title, items }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +27,9 @@ export default function Dropdown({ title, items }) {
                 <ul className="dropdown-menu">
                     {items.map((item, index) => (
                         <li key={index}>
-                            <a className="dropdown-item" href={item.href}>
+                            <Link className="dropdown-item" to={item.href}>
                                 {item.label}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>

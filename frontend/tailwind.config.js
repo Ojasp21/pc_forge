@@ -6,9 +6,22 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        bungee : ['Bungee Tint','serif'],
+        nabla : ['Nabla', 'serif'],
+        honk : ['Honk', 'serif'],
+        trainone : ["Train One", 'serif'],
+        yatra : ['Yatra One', 'serif'],
+        metrop : ['Metrophobic', 'serif'],
+        doto : ["Doto", 'serif'],
+        host : ["Host Grotesk", 'serif'],
+        rubik : ["Rubik Mono One", 'serif'],
+        martian : ["Martian Mono", 'serif'],
+        audiowide : ["Audiowide", 'serif']
+      },
       backgroundImage:{
-        'homepagebg' : "url('./src/images/homepagebg.png')"
-      }
+  'homepagebg' : "url('./src/images/homepagebg.png')",
+}
     },
   },
   plugins: [],

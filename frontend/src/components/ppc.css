@@ -1,0 +1,71 @@
+/* Main Professional PC Page */
+.professional-pc-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  color: #004d40;
+}
+
+.professional-pc-container h1 {
+  font-size: 32px;
+  color: #00796b;
+  margin-bottom: 20px;
+}
+
+.professional-pc-container p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  color: #004d40;
+}
+
+/* Individual Containers */
+.professional-pc-section {
+  background: #ffffff; /* White background like GPC */
+  border: 1px solid #00796b; /* Border color like GPC */
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Similar box-shadow as GPC */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.professional-pc-section:hover {
+  transform: translateY(-5px); /* Hover effect like GPC */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Hover shadow effect */
+}
+
+.professional-pc-section h2 {
+  font-size: 24px;
+  color: #004d40;
+  margin-bottom: 15px;
+}
+
+.professional-pc-section p {
+  font-size: 16px;
+  color: #004d40;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.professional-pc-section button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #00796b; /* Button color like GPC */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.professional-pc-section button:hover {
+  background-color: #004d40; /* Button hover color like GPC */
+}
+
+.professional-pc-section button:focus {
+  outline: none;
+}

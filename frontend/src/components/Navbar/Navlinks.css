@@ -139,7 +139,7 @@
     width: 100%;
 } */
  
- @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+ /* @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap'); */
 
  /* General Navbar Styling */
  .navbar {
@@ -164,7 +164,7 @@
  }
  
  .nav-link {
-   font-family: 'Audiowide', sans-serif; 
+   /* font-family: 'Audiowide', sans-serif;  */
    font-size: 1rem;
    color: #f0f0f0;
    text-transform: uppercase;
