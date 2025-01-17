@@ -1,5 +1,5 @@
 import React from "react";
-import "./gpc.css";
+import "./GamingPC.css";
 
 const GamingPC = () => {
   return (

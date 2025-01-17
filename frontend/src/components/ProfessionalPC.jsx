@@ -1,5 +1,5 @@
 import React from "react";
-import "./ppc.css";
+import "./ProfessionalPC.css";
 
 const ProfessionalPC = () => {
   return (
