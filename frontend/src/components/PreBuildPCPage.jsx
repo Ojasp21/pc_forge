@@ -6,7 +6,7 @@ const PrebuildPCPage = () => {
     <div className="container">
       <div className="pc-section">
         <h2>Gaming PC</h2>
-        <img src="src/assets/gaming.jpg" alt="Gaming PC" />
+        <img src="src/assets/gaming.jpg" alt="Gaming PC" style={{marginTop: '20px'}}/>
         <div className="intro">
           <p>
             The ultimate gaming experience awaits! Designed for seamless performance in modern AAA titles and esports games, this PC delivers immersive visuals and blazing-fast responsiveness.
@@ -36,7 +36,7 @@ const PrebuildPCPage = () => {
 
       <div className="pc-section">
         <h2>Editing PC</h2>
-        <img src="src/assets/edit.jpg" alt="Editing PC" />
+        <img src="src/assets/edit.jpg" alt="Editing PC" style={{marginBottom: '20px'}}/>
         <div className="intro">
           <p>
             Unleash your creativity with a PC tailored for photo and video editing, 3D rendering, and content creation.

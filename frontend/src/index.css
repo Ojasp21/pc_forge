@@ -17,10 +17,12 @@
   
   .container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
-    height: auto;
-    margin-top: 10px;
+    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    gap: 10px; /* Space between the cards */
+    padding: 10px 0; /* Remove horizontal padding to avoid extra space */
+    width: 100%; /* Ensure the container occupies full width */
+    box-sizing: border-box; /* Include padding and borders in width calculation */
+    margin: 0 auto; /* Center align the container if needed */
   }
   
   .pc-section {
