@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    margin-top: -20px;
+}
+
+.text-section {
+    flex: 1;
+    text-align: left;
+}
+
+.text-title {
+    font-size: 3.7rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    color: #efe815e4;
+}
+
+.text-subtitle {
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.features-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    color: #3af265;
+}
+
+.features-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.features-list li {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.features-list strong {
+    color: #ffd700;
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customGif {
+    height: auto;
+    width: 70%;
+    border-radius: 8px;
+    animation: glow 1s infinite alternate;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(0, 255, 255, 1), 0 0 60px rgba(0, 255, 255, 0.8);
+    }
+}
+
+@media (max-width: 1300px) {
+    .customGif {
+        height: auto;
+        width: 100%;
+    }
+}
+@media (max-width: 1000px) {
+    .container2 {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .image-section {
+        margin-top: 20px;
+    }
+
+    .customGif {
+        width: 50%;
+    }
+
+    .text-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .text-title {
+        font-size: 2rem;
+    }
+
+    .features-title {
+        font-size: 1.5rem; 
+    }
+
+    .features-list li {
+        font-size: 1rem; 
+    }
+}
+
+@media (max-width: 700px) {
+    .container2 {
+        padding: 15px;
+    }
+
+    .customGif {
+        width: 70%;
+    }
+
+    .text-title {
+        font-size: 1.5rem;
+    }
+
+    .text-subtitle {
+        font-size: 1rem; 
+    }
+
+    .features-title {
+        font-size: 1.3rem;
+    }
+
+    .features-list li {
+        font-size: 0.9rem; 
+    }
+}

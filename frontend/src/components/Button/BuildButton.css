@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 .build-btn {
+    font-family: 'Playfair Display', sans-serif;
     position: relative;
     z-index: 1;
     background: linear-gradient(135deg, #0d2a50, #00192e);
@@ -10,12 +14,15 @@
     padding: 12px 24px;
     border-radius: 12px;
     cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 2px;
     transition: all 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 204, 255, 0.5), 0 0 10px rgba(0, 204, 255, 0.3);
+    margin-left: 0px;
+    height: 100px;
+    width: 300px;
 }
 
 .build-btn:hover {
@@ -62,4 +69,36 @@
 .build-btn:hover::after {
     opacity: 1;
     transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .build-btn {
+        font-size: 24px; 
+        height: 80px;
+        width: 250px;
+        margin-left: 0px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .build-btn {
+        font-size: 20px;
+        height: 70px; 
+        width: 200px; 
+        margin-left: 0px; 
+        padding: 10px 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .build-btn {
+        font-size: 16px; 
+        height: 60px; 
+        width: 180px; 
+        margin-left: 0; 
+    }
+
+    .build-btn:hover {
+        transform: scale(1.05) translateY(-2px); 
+    }
 }

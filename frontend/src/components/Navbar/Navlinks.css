@@ -153,7 +153,6 @@
  }
  
 
- /* Lower Navbar Styling */
  .nav {
    display: flex;
    justify-content: space-between;
@@ -164,7 +163,7 @@
  }
  
  .nav-link {
-   /* font-family: 'Audiowide', sans-serif;  */
+   font-family: 'Audiowide', sans-serif; 
    font-size: 1rem;
    color: #f0f0f0;
    text-transform: uppercase;
