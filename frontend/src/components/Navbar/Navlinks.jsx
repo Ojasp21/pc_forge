@@ -1,6 +1,6 @@
 import React from 'react';
-import Dropdown from './Dropdown'; // Import Dropdown component
-import './Navlinks.css'; // Use your existing Navlinks.css
+import Dropdown from './Dropdown'; 
+import './Navlinks.css'; 
 
 export default function Navlinks() {
     const componentsItems = [
@@ -13,7 +13,6 @@ export default function Navlinks() {
         { label: 'Gaming', href: 'gaming' },
         { label: 'Professional', href: 'editing' },
         { label: 'Editing', href: 'editing' },
-        { label: 'Custom', href: 'custom' },
 
 
     ];

@@ -1,72 +1,113 @@
-/* Main Gaming PC Page */
 .gaming-pc-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-    color: #004d40;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  color: #e0e0e0;
+  font-family: 'Metrophobic', sans-serif;
+}
+
+.gaming-pc-container h1 {
+  font-size: 36px;
+  color: #b0c8eb;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.gaming-pc-container h1::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background: #26b7c1;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.gaming-pc-container p {
+  font-size: 18px;
+  color: #b0c4de;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.gaming-pc-sections-container {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  gap: 20px; 
+  margin-top: 20px;
+}
+
+.gaming-pc-section {
+  background: linear-gradient(145deg, #1a1f25, #2d343b);
+  border: 1px solid #344e5c;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1 1 calc(48%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  max-width: 48%; 
+  text-align: center;
+}
+
+.gaming-pc-section:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(145deg, #2d343b, #1a1f25);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.gaming-pc-section h2 {
+  font-size: 24px;
+  color: #b0c8eb;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+.gaming-pc-section p {
+  font-size: 16px;
+  color: #b0c4de;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.gaming-pc-section button {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #26b7c1, #1d4f91);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gaming-pc-section button:hover {
+  background: linear-gradient(135deg, #2de1e7, #2358a3);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 800px) {
+  .gaming-pc-sections-container {
+    flex-direction: column; 
   }
-  
-  .gaming-pc-container h1 {
-    font-size: 32px;
-    color: #00796b;
-    margin-bottom: 20px;
-  }
-  
-  .gaming-pc-container p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    line-height: 1.5;
-    color: #004d40;
-  }
-  
-  /* Individual Containers */
+
   .gaming-pc-section {
-    background: linear-gradient(135deg, #6dd5ed, #26a69a);
-    border: 1px solid #00796b;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 500px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%; 
+    flex: 1 1 100%;
   }
-  
-  .gaming-pc-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .gaming-pc-section h2 {
-    font-size: 24px;
-    color: #004d40;
-    margin-bottom: 15px;
-  }
-  
-  .gaming-pc-section p {
-    font-size: 16px;
-    color: #004d40;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  
-  /* Buttons */
-  .gaming-pc-section button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #00796b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .gaming-pc-section button:hover {
-    background-color: #004d40;
-  }
-  
-  .gaming-pc-section button:focus {
-    outline: none;
-  }
-  
+}
