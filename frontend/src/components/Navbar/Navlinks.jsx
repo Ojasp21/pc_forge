@@ -1,5 +1,9 @@
 import React from 'react';
 import Dropdown from './Dropdown'; 
+// // import { Link } from 'react-router-dom';
+// import { Link } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import './Navlinks.css'; 
 
 export default function Navlinks() {
@@ -33,14 +37,25 @@ export default function Navlinks() {
         { label: 'Talk To Expert', href: '#toe' },
 
     ];
+    
 
     return (
         <>
         <div>
             <ul className="nav justify-content-end">
+                <li className='nav-item'>
+                    {/* <Link to="prebuildpc" smooth={true} duration={500} className='nav-link' href="">Pre-Made PCs</Link> */}
+                    <RouterLink to="/" className="nav-link" onClick={() => {
+                setTimeout(() => {
+                document.getElementById("prebuildpc").scrollIntoView({
+                behavior: "smooth"
+              });
+            }, 100);
+          }}>
+            Pre-Made PCs
+          </RouterLink>
+                </li>
                 <Dropdown title="Components" items={componentsItems} />
-                <Dropdown title="Pre-Made PCs" items={preMadePCsItems} />
-                {/* <Dropdown title="Accessories" items={accessoriesItems} /> */}
                 <Dropdown title="Mr. PC" items={mrPCItems} />
                 <li className="nav-item">
                     <a className='nav-link' href="#">Sign In</a>
@@ -52,28 +67,3 @@ export default function Navlinks() {
     );
 }
 
-
-// import './Navlinks.css'
-// export default function Navlinks () {
-//     return (
-//         <div>
-//         <ul class="nav justify-content-end">
-//             <li class="nav-item">
-//                 <a class="nav-link active" href="#">Components</a>
-//             </li>
-//             <li class="nav-item">
-//                 <a class="nav-link" href="#">Pre-Made PCs</a>
-//             </li>
-//             <li class="nav-item">
-//                 <a class="nav-link" href="#">Accessories</a>
-//             </li>
-//             <li class="nav-item">
-//                 <a class="nav-link" href="#">Mr. PC</a>
-//             </li>
-//             <li class="nav-item">
-//                 <a class="gg-shopping-cart nav-link" href="#"></a>
-//             </li>
-//         </ul>
-//         </div>
-//     )
-// }

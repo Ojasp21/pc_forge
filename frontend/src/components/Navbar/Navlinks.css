@@ -1,154 +1,10 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
-.nav{
-  display:flex;
-  list-style-type:none;
-  gap:1.5rem;
-}
-.nav-link {
-    font-family: 'Audiowide', sans-serif; 
-    font-size: 1rem;
-    color: #f0f0f0;
-    text-transform: uppercase;
-    position: relative;
-    transition: color 0.3s ease;
-}
-.nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #faea0f, #ffa500);
-    transition: width 0.4s ease;
-}
-
-.nav-link:hover {
-    color: #a0f78a;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-.gg-shopping-cart {
-    margin-left:1rem;
-    display: inline-block;
-    box-sizing: border-box;
-    position: relative;
-    transform: scale(var(--ggs, 1));
-    width: 20px;
-    height: 21px;
-    background:
-      linear-gradient(to left, currentColor 12px, transparent 0) no-repeat -1px 6px/18px
-        2px,
-      linear-gradient(to left, currentColor 12px, transparent 0) no-repeat 6px
-        14px/11px 2px,
-      linear-gradient(to left, currentColor 12px, transparent 0) no-repeat 0 2px/4px
-        2px,
-      radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 12px
-        17px/4px 4px,
-      radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 6px
-        17px/4px 4px;
-  }
-  .nav-item:last-child {
-    display: flex; 
-    align-items: center;
-    justify-content: center; 
-    padding-bottom: 0.5%;
-}
-
-  .gg-shopping-cart::after,
-  .gg-shopping-cart::before {
-    content: "";
-    display: block;
-    position: absolute;
-    box-sizing: border-box;
-    width: 2px;
-    height: 14px;
-    background: currentColor;
-    top: 2px;
-    left: 4px;
-    transform: skew(12deg);
-  }
-  .gg-shopping-cart::after {
-    height: 10px;
-    top: 6px;
-    left: 16px;
-    transform: skew(-12deg);
-  }
-  .gg-shopping-cart:hover::after {
-    width: 8%;
-  }
-/* 
-  .upper-nav-link {
-    font-family: 'Audiowide', sans-serif; 
-    font-size: 1rem;
-    color: #f0f0f0;
-    text-transform: uppercase;
-    position: relative;
-    transition: color 0.3s ease;
-}
-.upper-nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #faea0f, #ffa500);
-    transition: width 0.4s ease;
-}
-
-.upper-nav-link:hover {
-    color: #a0f78a;
-}
-
-.upper-nav-link:hover::after {
-    width: 100%;
-} */
-
-
-/* .upper-nav-bar {
-    display: inline block;
-}
-.upper-nav-link {
-    font-family: 'Audiowide', sans-serif; 
-    font-size: 1rem;
-    color: #f0f0f0;
-    text-transform: uppercase;
-    position: relative;
-    transition: color 0.3s ease;
-}
-.upper-nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #faea0f, #ffa500);
-    transition: width 0.4s ease;
-}
-
-.upper-nav-link:hover {
-    color: #a0f78a;
-}
-
-.upper-nav-link:hover::after {
-    width: 100%;
-} */
- 
- /* @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap'); */
-
- /* General Navbar Styling */
- .navbar {
-   position:relative ;
+.navbar {
+   position:fixed ;
    top: 0;
    left: 0;
    width: 100%;
-   background-color: #001f3f; /* Adjust the background color */
-   padding: 10px 20px; /* Space inside the navbar */
+   background-color: #001f3f; 
+   padding: 10px 20px; 
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
  }
  
@@ -170,7 +26,7 @@
    position: relative;
    transition: color 0.3s ease;
  }
- 
+
  .nav-link::after {
    content: '';
    position: absolute;
@@ -190,7 +46,6 @@
    width: 100%;
  }
  
- /* Shopping Cart Icon */
  .gg-shopping-cart {
    margin-left: 1rem;
    display: inline-block;
@@ -225,9 +80,57 @@
    transform: skew(-12deg);
  }
  
- /* Content Offset to Avoid Overlap */
+ .gg-shopping-cart {
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  transform: scale(var(--ggs, 1));
+  width: 20px;
+  height: 21px;
+  background:
+    linear-gradient(to left, currentColor 12px, transparent 0) no-repeat -1px 6px/18px
+      2px,
+    linear-gradient(to left, currentColor 12px, transparent 0) no-repeat 6px
+      14px/11px 2px,
+    linear-gradient(to left, currentColor 12px, transparent 0) no-repeat 0 2px/4px
+      2px,
+    radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 12px
+      17px/4px 4px,
+    radial-gradient(circle, currentColor 60%, transparent 40%) no-repeat 6px
+      17px/4px 4px;
+}
+.nav-item:last-child {
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  padding-bottom: 0.5%;
+}
+
+.gg-shopping-cart::after,
+.gg-shopping-cart::before {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  width: 2px;
+  height: 14px;
+  background: currentColor;
+  top: 2px;
+  left: 4px;
+  transform: skew(12deg);
+}
+.gg-shopping-cart::after {
+  height: 10px;
+  top: 6px;
+  left: 16px;
+  transform: skew(-12deg);
+}
+.gg-shopping-cart:hover::after {
+  width: 8%;
+}
+
  .content {
-   margin-top: 100px; /* Adjust based on the navbar's height */
-   padding: 20px; /* Optional: Add padding for spacing */
+   margin-top: 100px; 
+   padding: 20px;
  }
  

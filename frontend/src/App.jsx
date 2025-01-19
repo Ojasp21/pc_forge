@@ -52,6 +52,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/prebuildpc" element={<PrebuildPCPage />} />
             <Route path="/build" element={<Tileset />} />
             <Route path="/build/:category" element={<TilePage />} />
             <Route path="/" element={<PrebuildPCPage />} />

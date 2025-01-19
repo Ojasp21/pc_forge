@@ -1,132 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Audiowide&family=Bungee+Tint&family=Doto:wght@100..900&family=Honk&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Kalnia+Glaze:wght@100..700&family=Martian+Mono:wght@100..800&family=Metrophobic&family=Nabla&family=Rubik+Mono+One&family=Train+One&family=Yatra+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
- /* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-  
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-  }
-
-.container {
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
-    height: auto;
-    margin-top: 10px;
-  }
-  
-  .pc-section {
-    background: linear-gradient(135deg, #6dd5ed, #07728d);
-    border: 1px solid #00796b;
-    border-radius: 8px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    margin-left: 10px;
-    
-  }
-  .pc-section a{
-    text-decoration: none;
-  }
-  
-  .pc-section:hover {
-    transform: scale(1.01);
-    background: linear-gradient(135deg, #26b7c1, #66a6ff);
-  }
-  
-  .pc-section h2 {
-    font-size: 24px;
-    color: #00796b;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  
-  .pc-section .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .pc-section img {
-    width: 100%;
-    height: auto;
-    max-height: 300px;
-    border-radius: 8px;
-    object-fit: contain;
-    margin-bottom: 10px;
-    
-  }
-  
-  .pc-section .intro {
-    font-size: 16px;
-    color: #004d40;
-    text-align: center;
-  }
-  
-  .pc-section button {
-    padding: 10px 20px;
-    background-color: #00796b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  
-    
-  }
-  
-  .pc-section button:hover {
-    background-color: #004d40;
-  }
-  
-  
-  @media (max-width: 800px) {
-    .container {
-      grid-template-columns: 1fr;
-    }
-  
-    .pc-section {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 10px;
-    }
-  
-    .pc-section h2 {
-      text-align: left;
-      font-size: 18px;
-    }
-  
-    .pc-section img {
-      width: 100%;
-      height: auto;
-      max-height: 200px; 
-    }
-  
-    .pc-section .intro {
-      text-align: left;
-      font-size: 14px;
-    }
-  
-    .pc-section button {
-      font-size: 14px;
-      margin-top: 10px;
-    }
-  }  */
-
 
 body {
     font-family: 'Metrophobic', sans-serif;
@@ -163,6 +37,7 @@ body {
 }
 
 .pc-section h2 {
+  margin-top: 40px;
     font-size: 24px;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;

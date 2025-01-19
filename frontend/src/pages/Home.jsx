@@ -26,7 +26,9 @@ const Home = () => {
 
       {/* Pre-built Section */}
       <div className="pre-builts w-full flex">
+        <section id="prebuildpc">
         <PrebuildPCPage />
+        </section>
       </div>
 
       {/* Footer */}
