@@ -62,7 +62,7 @@ function App() {
           <div className='mt-[4.5rem]'>
 
           <Routes>
-            <Route path="/signup" element={<SignUpPage/>}></Route>
+            <Route path="/signup" element={!authUser ? <SignUpPage />: <Navigate to='/' />}></Route>
             <Route path='/login' element={ !authUser ? <LoginPage />: <Navigate to='/' />} />
             <Route path="/" element={<Home />} />
             <Route path="/prebuildpc" element={<PrebuildPCPage />} />

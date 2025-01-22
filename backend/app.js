@@ -17,7 +17,7 @@ app.use(cors({
 app.use(cookieParser());
 app.use(express.json());
 dotenv.config();
-mongoose.connect('mongodb+srv://akashkawle2995:mongodb2995@cluster0.85no6.mongodb.net/pcforge?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log('Connected to MongoDB');
   })

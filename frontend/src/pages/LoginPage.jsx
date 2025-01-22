@@ -31,6 +31,7 @@ const LoginPage = () => {
     e.preventDefault();
     if (validateForm()) {
       login(formData);
+      
     }
   };
 
