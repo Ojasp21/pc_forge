@@ -168,7 +168,7 @@ const GamingContainer1 = () => {
               <tr>
                 <th>Component</th>
                 <th>Description</th>
-                <th>Buy Now</th>
+                <th>Here You Go</th>
               </tr>
             </thead>
             <tbody>

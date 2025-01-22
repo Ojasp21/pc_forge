@@ -68,7 +68,7 @@ const TextContent = () => {
         <div className="image-section">
           <img
             className="customGif"
-            src="/src/images/mainimg.jpeg"
+            src="/src/images/bg1.jpeg"
             alt="Custom PC"
           />
         </div>
