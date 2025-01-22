@@ -142,12 +142,13 @@ const GamingContainer1 = () => {
         {components.map((component, index) => (
           <div className="slide" key={index}>
             <h1 className="component-title">{component.title}</h1>
-            <img
+            <div className='comp'>
+            <img 
               src={component.image}
               alt={component.title}
               className="component-image"
             />
-            <p className="component-description">{component.description}</p>
+            {/* <p className="component-description">{component.description}</p> */}
             <ul className="spec-list">
               {component.specs.map((spec, specIndex) => (
                 <li key={specIndex} className="spec-item">
@@ -155,6 +156,7 @@ const GamingContainer1 = () => {
                 </li>
               ))}
             </ul>
+            </div>
           </div>
         ))}
 
