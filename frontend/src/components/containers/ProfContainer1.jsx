@@ -137,7 +137,8 @@ const ProfContainer1 = () => {
       >
         {components.map((component, index) => (
           <div className="slide" key={index}>
-            <h1 className="component-title">{component.title}</h1>
+             <div className="outer-box">
+            <h1 className="component-title"  style={{marginTop: "50px"}}>{component.title}</h1>
             <div className='comp'>
             <img
               src={component.image}
@@ -152,6 +153,7 @@ const ProfContainer1 = () => {
                 </li>
               ))}
             </ul>
+            </div>
             </div>
           </div>
         ))}
