@@ -2,11 +2,13 @@ import React from 'react';
 import Dropdown from './Dropdown'; 
 // // import { Link } from 'react-router-dom';
 // import { Link } from 'react-scroll';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link, Link as RouterLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import './Navlinks.css'; 
+import { useAuthStore } from '../../store/useAuthStore';
 
 export default function Navlinks() {
+
     const componentsItems = [
         { label: 'Motherboard', href: 'motherboard' },
         { label: 'Storage', href: 'storage' },
@@ -38,7 +40,7 @@ export default function Navlinks() {
 
     ];
     
-
+    const { authUser } = useAuthStore();
     return (
         <>
         <div>
@@ -58,7 +60,8 @@ export default function Navlinks() {
                 <Dropdown title="Components" items={componentsItems} />
                 <Dropdown title="Mr. PC" items={mrPCItems} />
                 <li className="nav-item">
-                    <a className='nav-link' href="#">Sign In</a>
+                    {/* <a className='nav-link' href="#">Sign In</a> */}
+                    {!authUser ? <Link to='/login' className="nav-link">Sign In</Link>: <div className='font-audiowide'>Hello, {authUser.fullName}</div> }
                     <a className="gg-shopping-cart nav-link" href="#"></a>
                 </li>
             </ul>

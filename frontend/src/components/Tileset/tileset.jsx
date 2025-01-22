@@ -220,7 +220,7 @@
         useEffect(() => {
           const fetchCategories = async () => {
             try {
-              const response = await axiosInstance.get('/api/categories');
+              const response = await axiosInstance.get('/parts/categories');
               setCategories(response.data);
             } catch (error) {
               console.error('Error fetching categories:', error);
@@ -240,8 +240,8 @@
         const totalPrice = addedParts.reduce((sum, part) => sum + parsePrice(part.price), 0);
       
         return (
-          <div className="tileset-container mt-5">
-            <h1 className="header text-3xl">Pick Your Parts</h1>
+          <div className="tileset-container ">
+            <h1 className="header text-3xl mt-5">Pick Your Parts</h1>
             <div id="container">
               <div id="added-parts">
                 <h2>Added Parts</h2>

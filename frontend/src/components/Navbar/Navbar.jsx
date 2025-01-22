@@ -4,12 +4,12 @@ import './Navbar.css';
 
 export default function Navbar() {
   return (
-    <>
+    
 
-      <nav className="navbar font-honk">
+      <nav className="navbar font-honk ">
         <Logo />
         <Navlinks />
       </nav>
-    </>
+    
   );
 }

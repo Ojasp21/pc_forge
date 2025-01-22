@@ -14,7 +14,7 @@ function TilePage() {
   useEffect(() => {
     const fetchParts = async () => {
       try {
-        const response = await axiosInstance.get(`/api/parts/category/${category}`);
+        const response = await axiosInstance.get(`/parts/category/${category}`);
         setParts(response.data);
         setLoading(false);
       } catch (error) {
