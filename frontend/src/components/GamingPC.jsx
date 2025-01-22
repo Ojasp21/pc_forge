@@ -3,6 +3,8 @@ import "./GamingPC.css";
 
 const GamingPC = () => {
   return (
+    <>
+    <img className="gamingbg" src="/src/images/Gaming.jpg" alt="" />
     <div className="gaming-pc-container">
       <h1>Gaming PC</h1>
       <p>Select your preferred gaming PC type:</p>
@@ -43,6 +45,7 @@ const GamingPC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

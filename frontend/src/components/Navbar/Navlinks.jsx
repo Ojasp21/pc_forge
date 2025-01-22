@@ -133,11 +133,11 @@ export default function Navlinks() {
                         <Link to='/login' className="nav-link">Sign In</Link>
                     ) : (
                         <div 
-                            className='auth-user-wrapper font-audiowide' 
+                            className='nav-link auth-user-wrapper font-audiowide' 
                             onMouseEnter={() => setHovered(true)} 
                             onMouseLeave={() => setHovered(false)}
                         >
-                            Hello, {authUser.fullName}
+                            Hello, {authUser.fullName.split(' ')[0]}
                             {hovered && (
                                 <div className="logout-dropdown bg-teal-600">
                                     <button className="logout-button" onClick={logout}>

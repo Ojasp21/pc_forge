@@ -21,6 +21,7 @@ export default {
       },
       backgroundImage:{
   'homepagebg' : "url('./src/images/homepagebg.png')",
+  'Edit': "url('./src/images/Edit.jpg')",
 }
     },
   },

@@ -2,7 +2,9 @@ import React from "react";
 import "./EditingPC.css";
 
 const EditingPC = () => {
-  return (
+  return ( 
+    <>
+  <img className="editbg" src="src/images/Edit.jpg" alt="" />
     <div className="editing-pc-container">
       <h1>Editing PC</h1>
       <p>Select the editing PC that suits your workflow:</p>
@@ -31,7 +33,13 @@ const EditingPC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
 export default EditingPC;
+
+
+
+
+

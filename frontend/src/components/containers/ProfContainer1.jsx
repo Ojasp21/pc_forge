@@ -1,16 +1,12 @@
-
-
-
 import React, { useState } from 'react';
-import './containercss/GamingContainer1.css';
-import CPU from './containerimg/highGradeGaming/CPU.jpg';
-import PSU from './containerimg/highGradeGaming/PSU.jpg';
-import Cooling from './containerimg/highGradeGaming/Cooling.png';
-import RAM from './containerimg/highGradeGaming/RAM.jpeg';
-import GPU from './containerimg/highGradeGaming/GPU.webp';
-import MB from './containerimg/highGradeGaming/MB.webp';
-import Storage from './containerimg/highGradeGaming/Storage.webp';
-import Case from './containerimg/highGradeGaming/Case.webp';
+import CPU from './containerimg/HighEndProf/CPU.jpg';
+import PSU from './containerimg/HighEndProf/PSU.jpg';
+// import Cooling from './containerimg/BudgetGaming/Cooling.jpg';
+import RAM from './containerimg/HighEndProf/RAM.jpg';
+import GPU from './containerimg/HighEndProf/GPU.jpg';
+import MB from './containerimg/HighEndProf/MB.jpg';
+import Storage from './containerimg/HighEndProf/Storage.jpg';
+import Case from './containerimg/HighEndProf/Case.jpg';
 
 const components = [
   {
