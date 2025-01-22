@@ -1,48 +1,121 @@
 import React, { useState } from 'react';
 import './containercss/GamingContainer1.css';
-
+import CPU from './containerimg/highGradeGaming/CPU.jpg';
+import PSU from './containerimg/highGradeGaming/PSU.jpg';
+import Cooling from './containerimg/highGradeGaming/Cooling.png';
+import RAM from './containerimg/highGradeGaming/RAM.jpeg';
+import GPU from './containerimg/highGradeGaming/GPU.webp';
+import MB from './containerimg/highGradeGaming/MB.webp';
+import Storage from './containerimg/highGradeGaming/Storage.webp';
+import Case from './containerimg/highGradeGaming/Case.webp';
 
 const components = [
   {
-    title: 'Gaming PC Build - Basic',
-    image: 'path/to/basic-build-image.jpg', // Add image path here
+    title: 'Processor (CPU)',
+    image: CPU,
     specs: [
-      'Processor: AMD Ryzen 5 5600X',
-      'Graphics Card: NVIDIA RTX 3060',
-      'RAM: 16GB DDR4',
-      'Storage: 512GB NVMe SSD',
-      'Motherboard: MSI B450 TOMAHAWK MAX',
+      'Model: AMD Ryzen 5 5600',
+      'Cores/Threads: 6 cores, 12 threads',
+      'Base Clock: 3.5 GHz',
+      'Boost Clock: Up to 4.4 GHz',
+      'TDP: 65W',
+      'Price: ₹13,000',
     ],
+    description:
+      'The AMD Ryzen 5 5600 is a great choice for photo editing, offering solid performance for most editing tasks.',
+    amazonLink: 'https://www.amazon.in/s?k=AMD+Ryzen+5+5600',
   },
   {
-    title: 'Gaming PC Build - Advanced',
-    image: 'path/to/advanced-build-image.jpg', // Add image path here
+    title: 'Graphics Card (GPU)',
+    image: GPU,
     specs: [
-      'Processor: Intel Core i7-12700K',
-      'Graphics Card: NVIDIA RTX 3080',
-      'RAM: 32GB DDR5',
-      'Storage: 1TB NVMe SSD',
-      'Motherboard: ASUS ROG STRIX Z690-E',
+      'Model: NVIDIA GTX 1660 Super',
+      'VRAM: 6GB GDDR6',
+      'Core Clock: 1530 MHz',
+      'Boost Clock: 1785 MHz',
+      'Power Draw: 125W',
+      'Price: ₹20,000',
     ],
+    description:
+      'The NVIDIA GTX 1660 Super provides sufficient performance for photo editing and light content creation tasks.',
+    amazonLink: 'https://www.amazon.in/s?k=NVIDIA+GTX+1660+Super',
   },
   {
-    title: 'Gaming PC Build - Ultimate',
-    image: 'path/to/ultimate-build-image.jpg', // Add image path here
+    title: 'Motherboard',
+    image: MB,
     specs: [
-      'Processor: AMD Ryzen 9 7950X',
-      'Graphics Card: NVIDIA RTX 4090',
-      'RAM: 64GB DDR5',
-      'Storage: 2TB NVMe SSD',
-      'Motherboard: MSI MEG X670E GODLIKE',
+      'Model: MSI B550M PRO-VDH WiFi',
+      'Socket: AM4',
+      'Chipset: B550',
+      'Form Factor: Micro-ATX',
+      'Features: WiFi 6, PCIe 4.0, USB 3.2 Gen 1',
+      'Price: ₹10,000',
     ],
+    description:
+      'A compact and affordable motherboard with excellent features for AM4 CPUs and content creation workloads.',
+    amazonLink: 'https://www.amazon.in/s?k=MSI+B550M+PRO-VDH+WiFi',
+  },
+  {
+    title: 'RAM',
+    image: RAM,
+    specs: [
+      'Model: Corsair Vengeance LPX DDR4 16GB',
+      'Configuration: 2x8GB',
+      'Speed: 3200MHz',
+      'Compatibility: DDR4 motherboards',
+      'Price: ₹6,500',
+    ],
+    description:
+      'Corsair Vengeance LPX RAM is perfect for smooth multitasking and efficient photo editing workflows.',
+    amazonLink: 'https://www.amazon.in/s?k=Corsair+Vengeance+LPX+DDR4+16GB',
+  },
+  {
+    title: 'Storage',
+    image: Storage,
+    specs: [
+      'Model: WD Black SN770 1TB NVMe SSD',
+      'Read Speed: Up to 5150 MB/s',
+      'Write Speed: Up to 4900 MB/s',
+      'Price: ₹8,000',
+    ],
+    description:
+      'A high-performance SSD for fast load times and efficient photo editing project management.',
+    amazonLink: 'https://www.amazon.in/s?k=WD+Black+SN770+1TB',
+  },
+  {
+    title: 'Power Supply Unit (PSU)',
+    image: PSU,
+    specs: [
+      'Model: Cooler Master MWE 550 V2',
+      'Wattage: 550W',
+      'Certification: 80+ Bronze',
+      'Features: Non-modular',
+      'Price: ₹3,500',
+    ],
+    description:
+      'A budget-friendly PSU delivering stable power for a content creation PC.',
+    amazonLink: 'https://www.amazon.in/s?k=Cooler+Master+MWE+550',
+  },
+  {
+    title: 'Case',
+    image: Case,
+    specs: [
+      'Model: DeepCool Matrexx 40',
+      'Material: Steel and tempered glass',
+      'Features: Compact design, good airflow',
+      'Price: ₹3,000',
+    ],
+    description:
+      'A compact and stylish case with good airflow for efficient cooling in a content creation PC.',
+    amazonLink: 'https://www.amazon.in/s?k=DeepCool+Matrexx+40',
   },
 ];
 
-const GamingContainer1 = () => {
+const EditingContainer2 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
-    if (currentIndex < components.length - 1) {
+    if (currentIndex < components.length) {
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -61,17 +134,56 @@ const GamingContainer1 = () => {
       >
         {components.map((component, index) => (
           <div className="slide" key={index}>
-            <h1>{component.title}</h1>
-            <img src={component.image} alt={component.title} className="component-image" />
-            <p>Specifications:</p>
-            <ul>
+            <h1 className="component-title">{component.title}</h1>
+            <img
+              src={component.image}
+              alt={component.title}
+              className="component-image"
+            />
+            <p className="component-description">{component.description}</p>
+            <ul className="spec-list">
               {component.specs.map((spec, specIndex) => (
-                <li key={specIndex}>{spec}</li>
+                <li key={specIndex} className="spec-item">
+                  {spec}
+                </li>
               ))}
             </ul>
           </div>
         ))}
+
+        {/* Final Slide with Buy Now buttons and descriptions */}
+        <div className="slide">
+          <h1 className="component-title">Complete Your Build</h1>
+          <table className="buy-now-table">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Model</th>
+                <th>Buy Now</th>
+              </tr>
+            </thead>
+            <tbody>
+              {components.map((component, index) => (
+                <tr key={index}>
+                  <td>{component.title}</td>
+                  <td>{component.specs[0].split(': ')[1]}</td>
+                  <td>
+                    <a
+                      href={component.amazonLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="buy-now-button"
+                    >
+                      Buy Now
+                    </a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
+
       <button
         className={`arrow left ${currentIndex === 0 ? 'disabled' : ''}`}
         onClick={handlePrevious}
@@ -80,9 +192,9 @@ const GamingContainer1 = () => {
         <span className="material-icons">chevron_left</span>
       </button>
       <button
-        className={`arrow right ${currentIndex === components.length - 1 ? 'disabled' : ''}`}
+        className={`arrow right ${currentIndex === components.length ? 'disabled' : ''}`}
         onClick={handleNext}
-        disabled={currentIndex === components.length - 1}
+        disabled={currentIndex === components.length}
       >
         <span className="material-icons">chevron_right</span>
       </button>
@@ -90,4 +202,11 @@ const GamingContainer1 = () => {
   );
 };
 
-export default GamingContainer1;
+export default EditingContainer2;
+
+
+
+
+
+
+
