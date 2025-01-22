@@ -48,8 +48,10 @@ function App() {
   return (
     <PartsProvider>
       <BrowserRouter>
-        <div className="flex flex-col">
+
           <Navbar />
+          <div className='mt-[4.5rem]'>
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/prebuildpc" element={<PrebuildPCPage />} />

@@ -15,7 +15,7 @@ const PrebuildPCPage = () => {
           <p><strong>Abilities:</strong> Handles resource-intensive games, ultra settings, and multi-monitor setups with ease.</p>
         </div>
         <a href="/gaming">
-          <button>Explore Gaming PC<i class="arrow-icon">➔</i></button>
+          <button>Explore Gaming PC<i className="arrow-icon">➔</i></button>
         </a>
       </div>
 
@@ -30,7 +30,7 @@ const PrebuildPCPage = () => {
           <p><strong>Abilities:</strong> Multitasks effortlessly, supports virtual environments, and accelerates computation-heavy tasks.</p>
         </div>
         <a href="/professional">
-          <button>Explore Professional PC<i class="arrow-icon">➔</i></button>
+          <button>Explore Professional PC<i className="arrow-icon">➔</i></button>
         </a>
       </div>
 
@@ -45,7 +45,7 @@ const PrebuildPCPage = () => {
           <p><strong>Abilities:</strong> Renders projects quickly, manages large media files, and ensures smooth creative workflows.</p>
         </div>
         <a href="/editing">
-          <button>Explore Editing PC <i class="arrow-icon">➔</i></button>
+          <button>Explore Editing PC <i className="arrow-icon">➔</i></button>
         </a>
       </div>
     </div>
