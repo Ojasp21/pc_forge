@@ -33,7 +33,7 @@ const Home = () => {
       </div>
 
       {/* Footer */}
-      <div className="footer bg-slate-600 h-[25rem] w-full flex bg-black"></div>
+      <div className="footer bg-slate-600 h-[25rem] w-full flex"></div>
     </div>
   );
 };
