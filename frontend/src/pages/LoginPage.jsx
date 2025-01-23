@@ -39,7 +39,7 @@ const LoginPage = () => {
     <>
     <img className="fixed top-0 left-0 w-screen h-screen object-cover z-[-1] opacity-50" src="/src/images/Loginbg.jpg" alt="" />
     <div className="min-h-screen flex justify-center items-center">
-      <div className="bg-gray-200 shadow-lg rounded-lg px-8 py-6 w-full max-w-md ">
+      <div className="bg-gray-300 shadow-lg rounded-lg px-8 py-6 w-full max-w-md bg-opacity-80">
         <h1 className="log text-2xl flex justify-center mb-4 text-gray-700 mt-3">Login</h1>
 
         <form onSubmit={handleSubmit} className="space-y-6">
