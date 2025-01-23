@@ -146,7 +146,13 @@ const GamingContainer2 = () => {
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {components.map((component, index) => (
-          <div className="slide" key={index}>
+          <div className="slide" key={index} style={{
+            backgroundImage: `url(/src/components/containers/containerimg/BGImages/GamingBG/${index}.jpg)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center', 
+            opacity : 0.9,     
+            zIndex : -1,        
+          }}>
             <div className="outer-box">
             <h1 className="component-title" style={{marginTop: "50px"}}>{component.title}</h1>
             <div className='comp'>
@@ -163,6 +169,13 @@ const GamingContainer2 = () => {
                 </li>
               ))}
             </ul>
+            </div>
+            <div className='mb-10'>
+              <a href={component.amazonLink} target='_blank'>
+            <button type="button" className="buy">
+            Buy Now </button> </a>
+            <button type="button" className="buy">
+            🛒Add to Cart</button>
             </div>
             </div>
             {/* Removed Buy Now button from individual slides */}

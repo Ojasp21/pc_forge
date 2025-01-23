@@ -7,6 +7,7 @@ import GPU from './containerimg/HighEndProf/GPU.jpg';
 import MB from './containerimg/HighEndProf/MB.jpg';
 import Storage from './containerimg/HighEndProf/Storage.jpg';
 import Case from './containerimg/HighEndProf/Case.jpg';
+import './containercss/GamingContainer1.css';
 
 const components = [
   {
@@ -131,8 +132,16 @@ const ProfContainer1 = () => {
         className="slides-wrapper"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {components.map((component, index) => (
-          <div className="slide" key={index}>
+        {components.map((component, index) => (<>
+          <div className="slide" key={index} style={{
+              backgroundImage: `url(/src/components/containers/containerimg/BGImages/${index}.jpg)`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center', 
+              opacity : 0.9,     
+              zIndex : -1,        
+            }}>
+         {/* <img className="bgimg" src={`/src/components/containers/containerimg/BGImages/${index}.jpg`}
+         alt={component.title}/> */}
              <div className="outer-box">
             <h1 className="component-title"  style={{marginTop: "50px"}}>{component.title}</h1>
             <div className='comp'>
@@ -150,9 +159,16 @@ const ProfContainer1 = () => {
               ))}
             </ul>
             </div>
+            <div className='mb-10'>
+              <a href={component.amazonLink} target='_blank'>
+            <button type="button" className="buy">
+            Buy Now </button> </a>
+            <button type="button" className="buy">
+            🛒Add to Cart</button>
+            </div>
             </div>
           </div>
-        ))}
+        </>))}
 
         {/* Final Slide with Buy Now buttons and descriptions */}
         <div className="slide">

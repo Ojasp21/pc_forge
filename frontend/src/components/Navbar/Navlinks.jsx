@@ -40,15 +40,25 @@ export default function Navlinks() {
         <div>
             <ul className="nav justify-content-end">
                 <li className='nav-item'>
-                    <RouterLink to="/" className="nav-link" onClick={() => {
+                <RouterLink to="/" className="nav-link"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        if (window.location.pathname === '/') {
+                        document.getElementById("prebuildpc").scrollIntoView({
+                        behavior: "smooth"
+                    });
+                    } else {
+                        const newTab = window.open('/', '_blank');
                         setTimeout(() => {
-                            document.getElementById("prebuildpc").scrollIntoView({
-                                behavior: "smooth"
-                            });
+                            if (newTab) {
+                                newTab.document.getElementById("prebuildpc").scrollIntoView({
+                                    behavior: "smooth"
+                                });
+                            }
                         }, 100);
-                    }}>
-                        Pre-Made PCs
-                    </RouterLink>
+                    }
+                }}>Pre-Made PCs </RouterLink>
+
                 </li>
                 <Dropdown title="Components" items={componentsItems} />
                 <Dropdown title="Mr. PC" items={mrPCItems} />
