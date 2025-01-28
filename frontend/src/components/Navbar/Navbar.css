@@ -7,7 +7,7 @@
     align-items: center;
     padding: 2.5% 2.5% ; 
     z-index: 1000;
-    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(135deg, #02111B, #001921);
     padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
 }
