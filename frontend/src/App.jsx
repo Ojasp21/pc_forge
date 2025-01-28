@@ -50,6 +50,7 @@ import { useAuthStore } from "./store/useAuthStore.js";
 import { useEffect } from "react";
 import LangFlowAPIComponent from "./components/Langflow.jsx";
 
+
 function App() {
   const { authUser, checkAuth } = useAuthStore();
   useEffect(() => {

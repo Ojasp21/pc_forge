@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(to right, #01141D, #022739);
     color: #e0e0e0;
   }
   
@@ -113,6 +113,7 @@ body {
   padding: 20px;
   font-family: 'Arial', sans-serif;
   color: #ffffff;
+
 }
 
 .header {
