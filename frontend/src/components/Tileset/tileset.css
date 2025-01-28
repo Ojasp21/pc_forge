@@ -215,3 +215,34 @@ body {
   font-weight: bold;
   color: #f0e68c;
 }
+
+.tick-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: green;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tile-content {
+  position: relative;
+  border: 1px solid transparent;
+  padding: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.tile-content.selected {
+  border-color: green;
+}
+
+.tile-content.selected .tick-icon {
+  display: flex;
+}

@@ -24,7 +24,49 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   align-items: top;
   gap: 20px;
+  position: relative;
 }
+
+.tick-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: green;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.part.selected .tick-icon {
+  display: flex; 
+}
+
+.part:hover .tick-icon {
+  display: flex;
+}
+
+.tile-content {
+  position: relative;
+  border: 1px solid transparent;
+  padding: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.tile-content.selected {
+  border-color: green;
+}
+
+.tile-content.selected .tick-icon {
+  display: flex;
+}
+
 
 .part:hover {
   transform: translateY(-5px);
@@ -206,3 +248,7 @@
     width: 100%; 
   }
 }
+
+
+
+
