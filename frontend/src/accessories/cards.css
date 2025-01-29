@@ -1,0 +1,79 @@
+/* Styles for each card */
+.card {
+  height: 400px; /* Increased height to accommodate buttons */
+  width: 500px;
+  background-color: #22333B;
+  border: 2px solid #22333B;
+  background: linear-gradient(145deg, #1a1f25, #2d343b);/* Keeping the gradient */
+  border-radius: 20px;
+  text-align: center;
+  color: antiquewhite;
+  margin: auto;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.331);
+  overflow: hidden; /* Prevents overflow outside the div */
+  transition: transform 0.50s ease-in-out; /* Smooth scaling transition */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures buttons stay at the bottom */
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 5px 5px 25px #a0f78ae0;
+}
+
+/* Image section inside each card (still without background image) */
+
+
+/* Text styling inside the card */
+#type {
+  position: relative; /* Keeps text from scaling */
+  bottom: 6px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  color: antiquewhite;
+}
+
+h3 {
+  margin-top: 1rem;
+}
+
+/* Style for buttons */
+.buttons {
+  display: flex;
+  justify-content: space-around; /* Evenly space the buttons */
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #5D8BA1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #022739;
+}
+
+.buy-now {
+  background-color: #28a745; /* Green for "Buy Now" */
+}
+
+.add-to-cart {
+  background-color: #ffc107; /* Yellow for "Add to Cart" */
+}
+
+.more-details {
+  background-color: #007bff; /* Blue for "More Details" */
+}
+
+.btn:hover {
+  opacity: 0.8; /* Slight opacity change on hover */
+}
