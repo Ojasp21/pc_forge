@@ -3,7 +3,7 @@ import './cards.css';
 export default function Cards({ title }) {
   return (
     <div className="card">
-      <section className="Image"></section>
+     
       <h3 id="type">{title}</h3>
 
       {/* Buttons Section */}
