@@ -182,6 +182,29 @@
   font-weight: bold;
 }
 
+.back-to-tileset {
+  position: absolute;
+  top: 6rem;
+  left: 3rem;
+  z-index: 1;
+}
+
+.back-link {
+  font-size: 20px;
+  text-decoration: none;
+  background-color: #f8f9fa;
+  padding: 5px 5px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-link:hover {
+  transform: scale(1.1);
+  text-decoration: none;
+}
+
+
 
 
 @media (max-width: 800px) {
@@ -189,6 +212,9 @@
     flex-direction: row;
     align-items: flex-start;
   }
+  /* .parts-list {
+    margin: 400px auto;
+  } */
 
   .part-image-container {
     width: 150px;

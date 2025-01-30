@@ -49,7 +49,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import { useAuthStore } from "./store/useAuthStore.js";
 import { useEffect } from "react";
 import LangFlowAPIComponent from "./components/Langflow.jsx";
-
+import AllCards from "./accessories/Allcards.jsx"
 
 function App() {
   const { authUser, checkAuth } = useAuthStore();
@@ -81,6 +81,7 @@ function App() {
             <Route path="/editing-container1" element={<EditingContainer1 />} />
             <Route path="/editing-container2" element={<EditingContainer2 />} />
             <Route path="/langflow" element={<LangFlowAPIComponent/>} />
+            <Route path="/accessories" element={<AllCards/>} />
 
           </Routes>
         </div>

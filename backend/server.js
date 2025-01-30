@@ -16,7 +16,7 @@ app.post('/api/langflow', async (req, res) => {
   const apiEndpoint = 'https://api.langflow.astra.datastax.com/lf/147ee7b2-a885-492e-9918-6f2be297dda0/api/v1/run/686809cb-6e99-4457-ba4a-2ca204746d00?stream=false';
   const headers = {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer AstraCS:DZPtHqRDrOxceDOlhaWwQuwm:c395ac30cae87c96c07d58118aa3855335cfb2661b7b245b007bba09a9b5712e'
+    'Authorization': 'Bearer AstraCS:fyATwGdUdwjLxuhSyQuqjHPc:6426e91411d2ddd6ecb84545f5d3beddf5868e8a7ab7c6b827847973c23448ad'
   };
 
   const data = {

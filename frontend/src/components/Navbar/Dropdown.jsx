@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import './Dropdown.css'; // For custom dropdown styles
 import { Link } from 'react-router-dom';
 
-export default function Dropdown({ title, items }) {
+export default function Dropdown({ title, items, linkTo }) {
     const [isOpen, setIsOpen] = useState(false);
 
-    // Handle mouse enter and leave to show/hide the dropdown
     const handleMouseEnter = () => {
         setIsOpen(true);
     };
@@ -20,9 +19,9 @@ export default function Dropdown({ title, items }) {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <a className="nav-link" href="#">
+            <Link className="nav-link" to={linkTo || '#'}>
                 {title}
-            </a>
+            </Link>
             {isOpen && (
                 <ul className="dropdown-menu">
                     {items.map((item, index) => (
