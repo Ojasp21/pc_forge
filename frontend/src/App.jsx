@@ -50,8 +50,8 @@ import { useAuthStore } from "./store/useAuthStore.js";
 import { useEffect } from "react";
 import LangFlowAPIComponent from "./components/Langflow.jsx";
 import useBuildStore from "./store/useBuildStore.js";
-
-
+import AllCards from "./accessories/Allcards.jsx"
+import ProductsPage from "./accessories/Productpage.jsx";
 function App() {
   const { authUser, checkAuth } = useAuthStore();
   const { fetchBuild } = useBuildStore();
@@ -90,7 +90,8 @@ function App() {
             <Route path="/editing-container1" element={<EditingContainer1 />} />
             <Route path="/editing-container2" element={<EditingContainer2 />} />
             <Route path="/langflow" element={<LangFlowAPIComponent/>} />
-
+            <Route path="/accessories" element={<AllCards />} />
+            <Route path="/category/:categoryName" element={<ProductsPage />} />
           </Routes>
         </div>
       </BrowserRouter>
