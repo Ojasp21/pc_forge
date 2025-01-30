@@ -49,13 +49,22 @@ import LoginPage from "./pages/LoginPage.jsx";
 import { useAuthStore } from "./store/useAuthStore.js";
 import { useEffect } from "react";
 import LangFlowAPIComponent from "./components/Langflow.jsx";
+import useBuildStore from "./store/useBuildStore.js";
 
 
 function App() {
   const { authUser, checkAuth } = useAuthStore();
+  const { fetchBuild } = useBuildStore();
   useEffect(() => {
     checkAuth();
-  }, []);
+
+  }, [checkAuth]);
+  
+  useEffect(() => {
+    if (authUser) {
+      fetchBuild();
+    }
+  }, [authUser]);
   return (
     <PartsProvider>
       <BrowserRouter>

@@ -4,6 +4,8 @@ import cors from "cors"
 import dotenv from "dotenv"
 import authRoutes from './routes/auth.route.js'
 import partRoutes from './routes/part.route.js'
+import buildRoutes from './routes/build.route.js'
+
 import cookieParser from "cookie-parser";
 
 
@@ -29,6 +31,8 @@ mongoose.connect(process.env.MONGODB_URI)
 
 app.use("/api/parts", partRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/build", buildRoutes);
+
 // Start the server
 const PORT = 2000;
 app.listen(PORT, () => {
