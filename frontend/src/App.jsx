@@ -225,35 +225,7 @@ function App() {
       <div className="flex flex-col min-h-screen"> {/* Full screen layout */}
         <BrowserRouter>
           <Toaster />
-          <Navbar />
-<<<<<<< HEAD
-          <div className='mt-[4.5rem]'>
-
-          <Routes>
-            <Route path="/signup" element={!authUser ? <SignUpPage />: <Navigate to='/' />}></Route>
-            <Route path='/login' element={ !authUser ? <LoginPage />: <Navigate to='/' />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/prebuildpc" element={<PrebuildPCPage />} />
-            <Route path="/build" element={<Tileset />} />
-            <Route path="/build/:category" element={<TilePage />} />
-            <Route path="/" element={<PrebuildPCPage />} />
-            <Route path="/gaming" element={<GamingPC />} />
-            <Route path="/professional" element={<ProfessionalPC />} />
-            <Route path="/editing" element={<EditingPC />} />
-            <Route path="/gaming-container1" element={<GamingContainer1 />} />
-            <Route path="/gaming-container2" element={<GamingContainer2 />} />
-            <Route path="/prof-container2" element={<ProfContainer2 />} />
-            <Route path="/prof-container1" element={<ProfContainer1 />} />
-            <Route path="/editing-container1" element={<EditingContainer1 />} />
-            <Route path="/editing-container2" element={<EditingContainer2 />} />
-            <Route path="/langflow" element={<LangFlowAPIComponent/>} />
-            <Route path="/accessories" element={<AllCards />} />
-            <Route path="/category/:categoryName" element={<ProductsPage />} />
-          </Routes>
-        </div>
-        
-      </BrowserRouter>
-=======
+          <Navbar />        
           <div className="flex-grow mb-0 mt-[4.5rem] py-0"> {/* Push footer to bottom */}
             <Routes>
               <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to="/" />} />
@@ -280,7 +252,6 @@ function App() {
           </div>
         </BrowserRouter>
       </div>
->>>>>>> 29c4bba (Footer and FAQs Page added)
     </PartsProvider>
   );
 }
