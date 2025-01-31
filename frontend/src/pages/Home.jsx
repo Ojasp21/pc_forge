@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import BuildButton from "../components/Button/BuildButton";
 import PrebuildPCPage from "../components/PreBuildPCPage";
 import TextContent from "../components/TextContent";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -33,7 +34,7 @@ const Home = () => {
       </div>
 
       {/* Footer */}
-      <div className="footer bg-slate-600 h-[25rem] w-full flex"></div>
+      <Footer />
     </div>
   );
 };

@@ -10,7 +10,7 @@ export default function Allcards() {
     <div className="cards-container">
       {categories.map((category) => (
         <Link
-          to={`/category/${encodeURIComponent(category)}`}  // Ensure URL encoding
+        to={`/category/${category.replace(/&/g, "and").replace(/\s+/g, "-")}`} 
           key={category}
           className="card-link"
         >

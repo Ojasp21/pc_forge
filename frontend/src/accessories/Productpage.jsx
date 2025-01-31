@@ -47,7 +47,7 @@ const allProducts = [
 
 export default function ProductsPage() {
     const { categoryName } = useParams();
-    const decodedCategory = decodeURIComponent(categoryName); // Ensure proper category matching
+    const decodedCategory = categoryName.replace(/-/g, " ").replace(/\band\b/g, "&");
     const products = allProducts.filter((product) => product.category === decodedCategory);
   
     return (

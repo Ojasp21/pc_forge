@@ -94,6 +94,7 @@ function App() {
             <Route path="/category/:categoryName" element={<ProductsPage />} />
           </Routes>
         </div>
+        
       </BrowserRouter>
     </PartsProvider>
   );
