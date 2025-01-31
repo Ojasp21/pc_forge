@@ -32,12 +32,6 @@ const Home = () => {
         <PrebuildPCPage />
         </section>
       </div>
-
-<<<<<<< HEAD
-      {/* Footer */}
-      <Footer />
-=======
->>>>>>> 29c4bba (Footer and FAQs Page added)
     </div>
   );
 };
