@@ -24,6 +24,8 @@ router.get('/category/:category', async (req, res) => {
     res.status(500).json({ message: 'Error fetching parts by category' });
   }
 });
+
+
 // Example route for categories (add this to your backend)
 router.get('/categories', async (req, res) => {
   // Get distinct categories from the database

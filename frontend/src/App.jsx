@@ -1,32 +1,7 @@
-// import { useState } from 'react'
-// import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useState } from "react";
 
-// import Navbar from './components/Navbar/Navbar'
-// import Home from './pages/Home.jsx'
-// import  {Tileset}  from './components/Tileset/tileset.jsx'
-// import TilePage from './components/Tileset/TilePage.jsx'
-// function App() {
 
-//   return (
-//     <>
-//       <BrowserRouter>
-//       <div className='flex flex-col'>
-//         <Navbar />
-
-//           <Routes>
-//             <Route path='/' element={<Home />}></Route>
-//             <Route path='/build' element={<Tileset />}></Route>
-//             <Route path='/build/:category' element={<TilePage />}></Route>
-//           </Routes>
-//         </div>
-//       </BrowserRouter>
-//     </>
-//   )
-// }
-
-// export default App
-
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { PartsProvider } from "./context/PartsContext";
 
 import Navbar from "./components/Navbar/Navbar";
@@ -50,51 +25,60 @@ import { useAuthStore } from "./store/useAuthStore.js";
 import { useEffect } from "react";
 import LangFlowAPIComponent from "./components/Langflow.jsx";
 import useBuildStore from "./store/useBuildStore.js";
-import AllCards from "./accessories/Allcards.jsx"
+import AllCards from "./accessories/Allcards.jsx";
 import ProductsPage from "./accessories/Productpage.jsx";
+import HomePageFooter from "./components/footer/HomePageFooter.jsx";
+import FAQPage from "./components/FAQPage.jsx";
+import Checkout from "./pages/Checkout.jsx";
+
 function App() {
   const { authUser, checkAuth } = useAuthStore();
   const { fetchBuild } = useBuildStore();
+  const [cartData, setCartData] = useState({ addedParts: [], removePart: () => {}, totalPrice: 0 });
+
   useEffect(() => {
     checkAuth();
-
   }, [checkAuth]);
-  
+
   useEffect(() => {
     if (authUser) {
       fetchBuild();
     }
   }, [authUser]);
+
   return (
     <PartsProvider>
-      <BrowserRouter>
+      <div className="flex flex-col min-h-screen"> {/* Full screen layout */}
+        <BrowserRouter>
           <Toaster />
-          <Navbar />
-          <div className='mt-[4.5rem]'>
-
-          <Routes>
-            <Route path="/signup" element={!authUser ? <SignUpPage />: <Navigate to='/' />}></Route>
-            <Route path='/login' element={ !authUser ? <LoginPage />: <Navigate to='/' />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/prebuildpc" element={<PrebuildPCPage />} />
-            <Route path="/build" element={<Tileset />} />
-            <Route path="/build/:category" element={<TilePage />} />
-            <Route path="/" element={<PrebuildPCPage />} />
-            <Route path="/gaming" element={<GamingPC />} />
-            <Route path="/professional" element={<ProfessionalPC />} />
-            <Route path="/editing" element={<EditingPC />} />
-            <Route path="/gaming-container1" element={<GamingContainer1 />} />
-            <Route path="/gaming-container2" element={<GamingContainer2 />} />
-            <Route path="/prof-container2" element={<ProfContainer2 />} />
-            <Route path="/prof-container1" element={<ProfContainer1 />} />
-            <Route path="/editing-container1" element={<EditingContainer1 />} />
-            <Route path="/editing-container2" element={<EditingContainer2 />} />
-            <Route path="/langflow" element={<LangFlowAPIComponent/>} />
-            <Route path="/accessories" element={<AllCards />} />
-            <Route path="/category/:categoryName" element={<ProductsPage />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
+          <Navbar />        
+          <div className="flex-grow mb-0 mt-[4.5rem] py-0"> {/* Push footer to bottom */}
+            <Routes>
+              <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to="/" />} />
+              <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/" />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/prebuildpc" element={<PrebuildPCPage />} />
+              <Route path="/build" element={<Tileset setCartData={setCartData} />} />
+              <Route path="/build/:category" element={<TilePage />} />
+              <Route path="/gaming" element={<GamingPC />} />
+              <Route path="/professional" element={<ProfessionalPC />} />
+              <Route path="/editing" element={<EditingPC />} />
+              <Route path="/gaming-container1" element={<GamingContainer1 />} />
+              <Route path="/gaming-container2" element={<GamingContainer2 />} />
+              <Route path="/prof-container2" element={<ProfContainer2 />} />
+              <Route path="/prof-container1" element={<ProfContainer1 />} />
+              <Route path="/editing-container1" element={<EditingContainer1 />} />
+              <Route path="/editing-container2" element={<EditingContainer2 />} />
+              <Route path="/langflow" element={<LangFlowAPIComponent />} />
+              <Route path="/accessories" element={<AllCards />} />
+              <Route path="/category/:categoryName" element={<ProductsPage />} />
+              <Route path="/faqs" element={<FAQPage />} />
+              <Route path="/checkout" element={<Checkout {...cartData} />} />
+            </Routes>
+          <HomePageFooter />
+          </div>
+        </BrowserRouter>
+      </div>
     </PartsProvider>
   );
 }

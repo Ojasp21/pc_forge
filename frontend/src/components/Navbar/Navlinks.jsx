@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Dropdown from './Dropdown'; 
 import { Link, Link as RouterLink } from 'react-router-dom';
 import { useAuthStore } from '../../store/useAuthStore';
+import useBuildStore from "../../store/useBuildStore"; //
 import './Navlinks.css'; 
 
 export default function Navlinks() {
@@ -13,6 +14,7 @@ export default function Navlinks() {
     ];
     
     const { authUser, logout } = useAuthStore();
+    const { addedParts } = useBuildStore();
     const [hovered, setHovered] = useState(false);
 
     return (
@@ -67,7 +69,12 @@ export default function Navlinks() {
                             )}
                         </div>
                     )}
-                    <a className="gg-shopping-cart nav-link" href="#"></a>
+                    <Link to="/checkout" className="nav-link cart-container">
+                        <i className="gg-shopping-cart"></i>
+                        {addedParts.length > 0 && (
+                            <span className="cart-count">{addedParts.length}</span>
+                        )}
+                    </Link>
                 </li>
             </ul>
         </div>

@@ -1,0 +1,146 @@
+/* checkout.css */
+
+/* General container styling */
+.checkout-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #1e1e1e; /* Dark background */
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+}
+
+/* Checkout header */
+.checkout-header {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Cart list */
+.checkout-list {
+    list-style: none;
+    padding: 0;
+}
+
+.checkout-item {
+    display: flex;
+    align-items: center;
+    background: #2b2b2b;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.checkout-item:hover {
+    transform: scale(1.02);
+}
+
+/* Product image */
+.checkout-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+/* Product details */
+.checkout-details {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.checkout-details h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.checkout-details p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Remove button */
+.remove-button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.remove-button:hover {
+    background: darkred;
+}
+
+/* Total price */
+.checkout-total {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Checkout button */
+.checkout-button {
+    background: #00b894; /* Teal green */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.checkout-button:hover {
+    background: #009f7a;
+}
+
+/* Back button */
+.back-button {
+    background: #636e72;
+    color: white;
+    padding: 10px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 15px;
+}
+
+.back-button:hover {
+    background: #525a5d;
+}
+
+/* Empty cart message */
+.empty-cart {
+    font-size: 18px;
+    color: #bbb;
+    margin-top: 20px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.buy-now-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.buy-now-button:hover {
+    background-color: #45a049;
+}
