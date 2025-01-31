@@ -8,14 +8,16 @@
   text-align: center;
   font-size: 2rem;
   color: #00ffc6;
-  font-family: "Arial", sans-serif;
-  font-weight: bold;
+  color: rgb(193, 203, 247);
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
 .part {
   display: flex;
-  background: linear-gradient(145deg, #1a1f25, #2d343b);
+  background: linear-gradient(145deg, #26313d, #193047);
   color: #e0e0e0;
   padding: 20px;
   margin-bottom: 20px;
@@ -74,14 +76,16 @@
 }
 
 .part-image-container {
-  flex-shrink: 0;
+  /* flex-shrink: 0;
   justify-content: flex-start;
   align-items: flex-start;
   width: 180px;
+  height: 180px; */
+  margin-right: 20px;
 }
 
 .part-image {
-  max-width: 100%;
+  width: 230px;
   height: auto;
   border-radius: 5px;
 }
@@ -102,7 +106,7 @@
 .part-price,
 .part-rating {
   font-size: 1.2rem;
-  color: #00ffc6;
+  color: #e1d5f5;
 }
 
 .part-buttons {
@@ -190,19 +194,36 @@
 }
 
 .back-link {
-  font-size: 20px;
-  text-decoration: none;
-  background-color:#404040;
-  padding: 5px 5px;
-  border-radius: 5px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, color 0.3s;
+  font-size: 10px; 
+  font-weight: bold; 
+  text-decoration: none; 
+  background: linear-gradient(135deg, #3f5372, #202c4e);
+  color: white; 
+  padding: 8px 15px; 
+  border-radius: 8px; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease-in-out; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  display: inline-block; 
+  cursor: pointer; 
 }
 
 .back-link:hover {
-  transform: scale(1.1);
-  text-decoration: none;
+  background: linear-gradient(135deg, #38425e, #404974); 
+  color: #eaf4fc; 
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); 
+  transform: scale(1.05); 
 }
+
+.back-link:active {
+  transform: scale(0.95); 
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+
 
 
 
@@ -217,7 +238,7 @@
   } */
 
   .part-image-container {
-    width: 150px;
+    width: 180px;
     height: 100%; 
     display: flex;
     align-items: center; 
@@ -238,10 +259,32 @@
   }
 }
 
+
+@media (max-width: 1130px) {
+  .part-title {
+    font-size: 1.4rem;
+  }
+  .part-image {
+    width: 200px;
+    height: auto;
+  }
+  .part-image-container {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width:1024px) {
+  .part-title {
+    font-size: 1.2rem;
+  }
+}
 @media (max-width: 700px) {
   .part {
     flex-direction: column; 
     align-items: flex-start;
+  }
+  .part-title {
+    font-size: 1.1rem;
   }
 
   .part-image-container {
