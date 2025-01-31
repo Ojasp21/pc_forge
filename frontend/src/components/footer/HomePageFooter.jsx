@@ -78,7 +78,7 @@ const HomePageFooter = () => {
   );
 
   return (
-    <footer className={`w-full ${isHomePage ? 'bg-gray-900 py-16' : 'bg-gray-900 py-8'} text-white mt-auto`}>
+    <footer className={`w-full ${isHomePage ? 'bg-gray-900 py-16' : 'bg-gray-900 py-8'} text-white mt-auto mb-0`}>
       {isHomePage ? (
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">

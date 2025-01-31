@@ -75,8 +75,8 @@ function App() {
               <Route path="/faqs" element={<FAQPage />} />
               <Route path="/checkout" element={<Checkout {...cartData} />} />
             </Routes>
-          <HomePageFooter />
           </div>
+          <HomePageFooter />
         </BrowserRouter>
       </div>
     </PartsProvider>

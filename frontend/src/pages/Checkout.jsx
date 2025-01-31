@@ -22,10 +22,10 @@ const Checkout = () => {
                                         Remove
                                     </button>
                                     <button 
-                                            className="buy-now-button" 
-                                            onClick={() => window.location.href = part.link}
+                                        className="buy-now-button" 
+                                        onClick={() => window.open(part.link, "_blank")}
                                         >
-                                            Buy Now
+                                        Buy Now
                                     </button>
                                 </div>
                             </li>
@@ -38,7 +38,7 @@ const Checkout = () => {
                 <p className="empty-cart">Your cart is empty.</p>
             )}
 
-            <button className="back-button" onClick={() => navigate(-1)}>Back</button>
+            <button className="back-button" onClick={() => navigate(-1)}> Back</button>
         </div>
     );
 };

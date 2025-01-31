@@ -2,10 +2,11 @@
 
 /* General container styling */
 .checkout-container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 40px auto;
     padding: 20px;
-    background: #1e1e1e; /* Dark background */
+    background: #1e1e1e;
+    background: linear-gradient(90deg, #0f2027, #203a43, #19323d);
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     color: white;
@@ -14,7 +15,8 @@
 
 /* Checkout header */
 .checkout-header {
-    font-size: 28px;
+    color: rgb(193, 203, 247);
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -28,7 +30,8 @@
 .checkout-item {
     display: flex;
     align-items: center;
-    background: #2b2b2b;
+    background: #0d0c44;
+    background: linear-gradient(90deg, #0f2027, #203a43, #19323d);
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -41,8 +44,8 @@
 
 /* Product image */
 .checkout-image {
-    width: 80px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     border-radius: 8px;
     object-fit: cover;
     margin-right: 15px;
@@ -60,24 +63,39 @@
 }
 
 .checkout-details p {
-    font-size: 14px;
+    font-size: 22px;
     margin: 5px 0;
 }
 
 /* Remove button */
 .remove-button {
-    background: red;
+    background: linear-gradient(135deg, #e74c3c, #c0392b); /* Elegant red gradient */
     color: white;
+    font-weight: bold;
     border: none;
-    padding: 8px 12px;
-    border-radius: 6px;
+    padding: 10px 20px; /* Matches the Buy Now button */
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px; /* Matches the font size of Buy Now */
+    margin-left: 10px;
 }
 
 .remove-button:hover {
-    background: darkred;
+    background: linear-gradient(135deg, #c0392b, #a93226); /* Darker red on hover */
+    box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);
+    transform: translateY(-2px);
 }
+
+.remove-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 6px rgba(231, 76, 60, 0.3);
+}
+
+
 
 /* Total price */
 .checkout-total {
@@ -88,38 +106,62 @@
 
 /* Checkout button */
 .checkout-button {
-    background: #00b894; /* Teal green */
+    background: linear-gradient(135deg, #ff6b6b, #ff4757); /* Elegant red gradient */
     color: white;
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 14px 24px;
+    font-size: 18px;
     font-weight: bold;
+    text-transform: uppercase;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
     margin-top: 10px;
+    display: inline-block;
+    letter-spacing: 1px;
 }
 
 .checkout-button:hover {
-    background: #009f7a;
+    background: linear-gradient(135deg, #ff4757, #e84118);
+    box-shadow: 0 6px 15px rgba(255, 71, 87, 0.4);
+    transform: translateY(-2px);
 }
+
+.checkout-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+}
+
 
 /* Back button */
 .back-button {
-    background: #636e72;
+    background: linear-gradient(135deg, #636e72, #4d5659); /* Neutral gray gradient */
     color: white;
-    padding: 10px 16px;
-    font-size: 14px;
+    font-weight: bold;
+    font-size: 16px; /* Matches the Buy Now and Remove buttons */
+    padding: 10px 20px; /* Consistent with other buttons */
     border: none;
-    border-radius: 6px;
+    border-radius: 8px; /* Matches rounded corners */
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(99, 110, 114, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-top: 15px;
 }
 
 .back-button:hover {
-    background: #525a5d;
+    background: linear-gradient(135deg, #4d5659, #394042); /* Darker gray on hover */
+    box-shadow: 0 6px 12px rgba(99, 110, 114, 0.4);
+    transform: translateY(-2px);
 }
+
+.back-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 6px rgba(99, 110, 114, 0.3);
+}
+
 
 /* Empty cart message */
 .empty-cart {
@@ -134,13 +176,85 @@
 }
 
 .buy-now-button {
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, #27ae60, #197740);
     color: white;
+    padding: 11px 22px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
     border: none;
-    padding: 10px 20px;
+    border-radius: 10px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(39, 174, 96, 0.2);
+    display: inline-block;
+    letter-spacing: 1px;
+    margin-left: 10px;
 }
 
 .buy-now-button:hover {
-    background-color: #45a049;
+    background: linear-gradient(135deg, #229954, #27ae60);
+    box-shadow: 0 6px 12px rgba(39, 174, 96, 0.4);
+    transform: translateY(-2px);
 }
+
+.buy-now-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 3px 6px rgba(39, 174, 96, 0.3);
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .checkout-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background: #1e1e1e;
+    background: linear-gradient(90deg, #0f2027, #203a43, #19323d);
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        color: white;
+        text-align: center;
+    }
+    .checkout-header {
+        color: rgb(193, 203, 247);
+        font-size: 35px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+}
+
+
+@media (max-width: 800px) {
+    .checkout-container {
+        max-width: 800px;
+        margin: 40px auto;
+        margin-top: 70px;
+        padding: 20px;
+        background: #1e1e1e;
+    background: linear-gradient(90deg, #0f2027, #203a43, #19323d);
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        color: white;
+        text-align: center;
+    }
+    .checkout-header {
+        color: rgb(193, 203, 247);
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .checkout-details h3 {
+        font-size: 16px;
+        margin: 0;
+    }
+    .checkout-details p {
+        font-size: 20px;
+    }
+}
+
+
+

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import BuildButton from "../components/Button/BuildButton";
 import PrebuildPCPage from "../components/PreBuildPCPage";
 import TextContent from "../components/TextContent";
-import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
