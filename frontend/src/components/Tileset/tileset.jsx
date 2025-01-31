@@ -110,7 +110,7 @@ export function Tileset({ setCartData }) {
                     </h3>
                 </div>
 
-                <div id="outer" className="flex">
+                <div id="outer" className="grid">
                     {categories.map((category) => (
                         <Link
                             key={category}
