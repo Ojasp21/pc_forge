@@ -5,7 +5,7 @@ import axiosInstance from "../../axiosInstance";
 import useBuildStore from "../../store/useBuildStore";
 import { useAuthStore } from "../../store/useAuthStore";
 
-export function Tileset() {
+export function Tileset({ setCartData }) {
     const [categories, setCategories] = useState([]);
     const { addedParts, removePart, fetchBuild } = useBuildStore();
     const { authUser } = useAuthStore();
@@ -21,13 +21,14 @@ export function Tileset() {
         };
 
         fetchCategories();
-
     }, []);
+
     useEffect(() => {
-      if (authUser) {
-          fetchBuild();
-      }
-  }, [authUser]);
+        if (authUser) {
+            fetchBuild();
+        }
+    }, [authUser]);
+
     const parsePrice = (price) => {
         if (!price) return 0;
         return parseFloat(price.replace(/,/g, "").replace(/[^0-9.]/g, "")) || 0;
@@ -38,29 +39,20 @@ export function Tileset() {
         0
     );
 
+    useEffect(() => {
+        if (setCartData) {
+            setCartData({ addedParts, removePart, totalPrice });
+        }
+    }, [addedParts, totalPrice, setCartData]);
+    
+
     return (
-        <div className="tileset-container ">
+        <div className="tileset-container">
             <h1 className="header text-3xl mt-5">Pick Your Parts</h1>
             <div id="container">
                 <div id="added-parts">
                     <h2>Added Parts</h2>
                     <ul id="parts-list">
-                        {/* {addedParts.map((part) => (
-                            <li key={part._id}>
-                                <span>
-                                    <strong>{part.category}:</strong>{" "}
-                                    {part.title ? part.title.split(" ").slice(0, 10).join(" ") : "Unknown Part"}
-
-                                    ...
-                                </span>
-                                <button
-                                    onClick={() => removePart(part._id)}
-                                    className="remove-part"
-                                >
-                                    Remove
-                                </button>
-                            </li>
-                        ))} */}
                         {categories.map((category) => (
                             <li key={category}>
                                 <strong className="text-xl text-white">{category}</strong>
@@ -97,7 +89,7 @@ export function Tileset() {
                             to={`/build/${category}`}
                             className="item"
                         >
-                            <div className="tile-content ">
+                            <div className="tile-content">
                                 <h3>{category}</h3>
                             </div>
                         </Link>
