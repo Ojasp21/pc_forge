@@ -1,3 +1,4 @@
+import { AiOutlineLoading } from "react-icons/ai"; 
 import "./tileset.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -9,7 +10,9 @@ export function Tileset() {
     const [categories, setCategories] = useState([]);
     const { addedParts, removePart, fetchBuild } = useBuildStore();
     const { authUser } = useAuthStore();
-
+    const [compatibilityResponse, setCompatibilityResponse] = useState("");
+    const [showResponse, setShowResponse] = useState(false);
+    const [ compLoading, setCompLoading ] = useState(false);
     useEffect(() => {
         const fetchCategories = async () => {
             try {
@@ -37,6 +40,30 @@ export function Tileset() {
         (sum, part) => sum + parsePrice(part.price),
         0
     );
+    const handleCheckCompatibility = async () => {
+        try {
+            setCompLoading(true);
+            // Extract only `title` and `category` from addedParts
+            const parts = addedParts.map(part => ({
+                category: part.category,
+                title: part.title
+            }));
+    
+            const response = await axiosInstance.post("/langflow/run-flow",  {parts} );
+            console.log(response);
+            // Update the state with compatibility response
+            setCompatibilityResponse(response.data || "Compatibility check complete!");
+
+        } catch (error) {
+            console.error("Error checking compatibility:", error);
+            setCompatibilityResponse("Error checking compatibility. Please try again.");
+            setShowResponse(true);
+        } finally {
+            setCompLoading(false);
+            setShowResponse(true);
+        }
+    };
+    
 
     return (
         <div className="tileset-container ">
@@ -90,6 +117,7 @@ export function Tileset() {
                         Total Price: ₹{totalPrice.toLocaleString("en-IN")}
                     </h3>
                 </div>
+
                 <div id="outer" className="flex">
                     {categories.map((category) => (
                         <Link
@@ -104,6 +132,13 @@ export function Tileset() {
                     ))}
                 </div>
             </div>
+            <div className="compatibility-box p-4 mt-5 w-[90%] mx-auto bg-gray-800 text-white rounded-lg shadow-lg items-center justify-center flex gap-1 flex-col">
+                <h2 className=" text-2xl text-green-300 font-extrabold text-center">Compatibility Check</h2>
+                {compLoading ? <div className="animate-spin flex items-center justify-center"><AiOutlineLoading size={"2rem"}/></div> : showResponse && <p className="mt-2 text-base">{compatibilityResponse}</p>}
+                <button onClick={handleCheckCompatibility} className="mt-3 px-4 py-2  bg-green-600 text-white rounded-lg shadow hover:bg-green-700">
+                    Check Compatibility
+                </button>
+            </div>
         </div>
-    );
+        );
 }
