@@ -7,10 +7,16 @@ import './Navlinks.css';
 
 export default function Navlinks() {
     const mrPCItems = [
-        { label: 'About Us', href: '#about-us' },
-        { label: 'Support', href: '#support' },
-        { label: 'Contact', href: '#contact' },
+        { label: 'About Us', href: '/about-us' },
+        { label: 'Support', href: '/faqs' },
+        { label: 'Contact', href: 'mailto:support@pc_forge.com?subject=Support Request&body=Hello, I need help with...' },
         { label: 'Talk To Expert', href: '#toe' },
+    ];
+    const accessories = [
+        {label: "Monitor", href: '/category/Monitor'},
+        {label: "Mouse", href: '/category/Mouse-and-Mouse-Pads'},
+        {label: "Keyboard", href: '/category/Keyboard'},
+        {label: "More", href: '/accessories'},
     ];
     
     const { authUser, logout } = useAuthStore();
@@ -44,11 +50,12 @@ export default function Navlinks() {
                         Pre-Made PCs
                     </RouterLink>
                 </li>
-                <li className='nav-item'>
+                {/* <li className='nav-item'>
                     <RouterLink to="/accessories" className="nav-link">
                         Accessories
                     </RouterLink>
-                </li>
+                </li> */}
+                <Dropdown title="Accessories" items={accessories} />
                 <Dropdown title="Mr. PC" items={mrPCItems} />
                 <li className="nav-item">
                     {!authUser ? (

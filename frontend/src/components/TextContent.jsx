@@ -181,62 +181,76 @@
 
 
 
-
-
-
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { gsap } from "gsap";
 import "./TextContent.css";
 
 const TextContent = () => {
+  const images = [
+    "/src/images/bg1.jpeg",
+    "/src/images/bg2.jpeg",
+    "/src/images/bg3.jpeg",
+    "/src/images/bg4.jpeg",
+    "/src/images/bg5.jpeg",
+  ];
+
+  const { scrollYProgress } = useScroll();
+
+  const imageIndex = useTransform(scrollYProgress, [0, 0.25], [0, images.length - 1]);
+  
   const [currentImage, setCurrentImage] = useState(0);
-  const images = ["/src/images/bg1.jpeg", "/src/images/bg2.jpeg", "/src/images/bg3.jpeg", "/src/images/bg4.jpeg", "/src/images/bg5.jpeg"];
 
   useEffect(() => {
-    // Text animations with GSAP
+    const unsubscribe = imageIndex.onChange((value) => {
+      setCurrentImage(Math.floor(value)); // Round to the nearest whole number
+    });
+    return () => unsubscribe();
+  }, [imageIndex]);
+
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.2], ["0%", "-50%"]);
+  const imageOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]); // Fade out the image faster
+
+  useEffect(() => {
     gsap.fromTo(
       ".text-title span",
       { opacity: 0, x: -50 },
       { opacity: 1, x: 0, duration: 0.5, stagger: 0.07, ease: "power2.out" }
     );
-  
+
     gsap.fromTo(
       ".text-subtitle",
       { opacity: 0 },
       { opacity: 1, duration: 1, delay: 0.6 }
     );
-      
+
     gsap.fromTo(
       ".features-title",
       { opacity: 0 },
       { opacity: 1, duration: 1, delay: 1 }
     );
-  
+
     gsap.fromTo(
       ".features-list li",
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 1, stagger: 0.2, delay: 1.2 }
     );
-
-    // Image slideshow effect
-    const imageInterval = setInterval(() => {
-      setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
-
-    return () => clearInterval(imageInterval); // Cleanup on component unmount
   }, []);
 
   return (
     <>
-      <h1 className="text-title">
-        { "BUILD YOUR DREAM PC WITH EASE".split("").map((char, index) => (
-          <span key={index}>{char}</span>
+      {/* Motion applied to fade out on scroll */}
+      <motion.h1 className="text-title" style={{ opacity, y }}>
+        {"BUILD YOUR DREAM PC WITH EASE".split("").map((char, index) => (
+          <motion.span key={index} style={{ opacity, y }}>
+            {char}
+          </motion.span>
         ))}
-      </h1>
+      </motion.h1>
+
       <div className="container2">
-        {/* Text Section */}
-        <div className="text-section">
+        <motion.div className="text-section" style={{ opacity, y }}>
           <p className="text-subtitle">
             Whether it’s for gaming, productivity, or performance, we help you
             create the perfect setup.
@@ -259,25 +273,24 @@ const TextContent = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* Image Section with Framer Motion */}
         <div className="image-section">
-          <AnimatePresence>
-            <motion.img
-              key={currentImage}
-              src={images[currentImage]}
-              alt="Custom PC"
-              className="customGif"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{
-                duration: 0.8,
-                ease: "easeInOut"
-              }}
-            />
-          </AnimatePresence>
+          <motion.img
+            // style={{ imageOpacity, y }}
+            key={currentImage}
+            src={images[currentImage]}
+            alt="Custom PC"
+            className="customGif"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{
+              duration: 1,
+              ease: [0.25, 1, 0.5, 1],
+            }}
+          />
         </div>
       </div>
     </>
@@ -285,3 +298,20 @@ const TextContent = () => {
 };
 
 export default TextContent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

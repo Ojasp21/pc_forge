@@ -3,7 +3,6 @@ import { useState } from "react";
 
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { PartsProvider } from "./context/PartsContext";
-
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home.jsx";
 import { Tileset } from "./components/Tileset/tileset.jsx";
@@ -30,11 +29,13 @@ import ProductsPage from "./accessories/ProductPage.jsx";
 import HomePageFooter from "./components/footer/HomePageFooter.jsx";
 import FAQPage from "./components/FAQPage.jsx";
 import Checkout from "./pages/Checkout.jsx";
+import AboutUs from "./components/AboutUsPage.jsx";
 
 function App() {
   const { authUser, checkAuth } = useAuthStore();
   const { fetchBuild } = useBuildStore();
   const [cartData, setCartData] = useState({ addedParts: [], removePart: () => {}, totalPrice: 0 });
+  
 
   useEffect(() => {
     checkAuth();
@@ -74,6 +75,7 @@ function App() {
               <Route path="/accessories/:category" element={<ProductsPage />} />
               <Route path="/faqs" element={<FAQPage />} />
               <Route path="/checkout" element={<Checkout {...cartData} />} />
+              <Route path="about-us" element={<AboutUs/>}/>
             </Routes>
           </div>
           <HomePageFooter />

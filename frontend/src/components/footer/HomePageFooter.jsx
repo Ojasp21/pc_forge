@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaInstagram, FaDiscord } from 'react-icons/fa';
-import FAQPage from '../FAQPage';
+import { motion } from 'framer-motion';
 
 const HomePageFooter = () => {
   const location = useLocation();
@@ -13,28 +13,7 @@ const HomePageFooter = () => {
       <h3 className="text-white font-semibold mb-2">Quick Links</h3>
       <a href="/" className="text-gray-400 hover:text-white transition">Home</a>
       <a href="/build" className="text-gray-400 hover:text-white transition">Build a PC</a>
-      {/* <a href="/prebuilt" className="text-gray-400 hover:text-white transition">Pre-Built PCs</a> */}
-      <Link to="/" className="text-gray-400 hover:text-white transition"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            if (window.location.pathname === '/') {
-                                document.getElementById("prebuildpc").scrollIntoView({
-                                    behavior: "smooth"
-                                });
-                            } else {
-                                const newTab = window.open('/', '_blank');
-                                setTimeout(() => {
-                                    if (newTab) {
-                                        newTab.document.getElementById("prebuildpc").scrollIntoView({
-                                            behavior: "smooth"
-                                        });
-                                    }
-                                }, 100);
-                            }
-                        }}
-                    >
-                        Pre-Built PCs
-                    </Link>
+      <Link to="/" className="text-gray-400 hover:text-white transition">Pre-Built PCs</Link>
       <a href="mailto:support@pc_forge.com?subject=Support Request&body=Hello, I need help with..." className="text-gray-400 hover:text-white transition">Contact</a>
     </div>
   );
@@ -56,7 +35,6 @@ const HomePageFooter = () => {
       <Link to="/faqs" className="text-gray-400 hover:text-white transition">FAQs</Link>
       <a href="/faqs" className="text-gray-400 hover:text-white transition">Buying Guide</a>
       <a href="/faqs" className="text-gray-400 hover:text-white transition">Compatibility Help</a>
-      {/* <a href="/shipping" className="text-gray-400 hover:text-white transition">Shipping</a> */}
     </div>
   );
 
@@ -81,7 +59,12 @@ const HomePageFooter = () => {
     <footer className={`w-full ${isHomePage ? 'bg-gray-900 py-16' : 'bg-gray-900 py-8'} text-white mt-auto mb-0`}>
       {isHomePage ? (
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
             <h2 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 animate-pulse mb-4">
               Build Your Ultimate PC Now!
             </h2>
@@ -94,9 +77,14 @@ const HomePageFooter = () => {
             >
               Start Building
             </a>
-          </div>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
+          >
             <QuickLinks />
             <Categories />
             <Support />
@@ -105,9 +93,14 @@ const HomePageFooter = () => {
               <p className="text-gray-400 italic mb-4">"Frames Win Games – Choose Your Hardware Wisely!"</p>
               <SocialLinks />
             </div>
-          </div>
+          </motion.div>
           
-          <div className="pt-8 border-t border-gray-800 text-center text-gray-400">
+          <motion.div
+            className="pt-8 border-t border-gray-800 text-center text-gray-400"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+          >
             <div className="flex justify-center gap-6 text-sm mb-4">
               <a href="#" className="hover:text-white transition">About</a>
               <a href="#" className="hover:text-white transition">Support</a>
@@ -115,11 +108,16 @@ const HomePageFooter = () => {
               <a href="#" className="hover:text-white transition">Terms & Conditions</a>
             </div>
             <p className="text-sm">© 2025 PC Forge. All rights reserved.</p>
-          </div>
+          </motion.div>
         </div>
       ) : (
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
+          >
             <QuickLinks />
             <Categories />
             <Support />
@@ -127,14 +125,19 @@ const HomePageFooter = () => {
               <h3 className="text-white font-semibold mb-2">Stay Connected</h3>
               <SocialLinks />
             </div>
-          </div>
-          <div className="pt-4 border-t border-gray-800 flex justify-between items-center text-sm text-gray-400">
+          </motion.div>
+          <motion.div
+            className="pt-4 border-t border-gray-800 flex justify-between items-center text-sm text-gray-400"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+          >
             <span>© 2025 PC Forge</span>
             <div className="flex gap-4">
               <a href="mailto:support@pc_forge.com?subject=Support Request&body=Hello, I need help with..." className="hover:text-white transition">Contact</a>
               <a href="#" className="hover:text-white transition">Terms</a>
             </div>
-          </div>
+          </motion.div>
         </div>
       )}
     </footer>
