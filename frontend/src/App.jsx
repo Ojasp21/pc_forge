@@ -53,7 +53,7 @@ function App() {
         <BrowserRouter>
           <Toaster />
           <Navbar />        
-          <div className="flex-grow mb-0 mt-[4.5rem] py-0"> {/* Push footer to bottom */}
+          <div className="flex-grow mb-0 mt-[2.5rem] py-0"> {/* Push footer to bottom */}
             <Routes>
               <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to="/" />} />
               <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/" />} />

@@ -13,10 +13,10 @@ export default function Navlinks() {
         { label: 'Talk To Expert', href: '#toe' },
     ];
     const accessories = [
-        {label: "Monitor", href: '/category/Monitor'},
-        {label: "Mouse", href: '/category/Mouse-and-Mouse-Pads'},
-        {label: "Keyboard", href: '/category/Keyboard'},
-        {label: "More", href: '/accessories'},
+        {label: "Headphones", href: '/accessories/Headphones'},
+        {label: "Mouse", href: '/accessories/Mouse'},
+        {label: "Keyboard", href: '/accessories/Keyboard'},
+        {label: "MousePads", href: '/accessories/MousePads'},
     ];
     
     const { authUser, logout } = useAuthStore();

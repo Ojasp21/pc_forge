@@ -179,11 +179,10 @@
 
 
 
-
-
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { gsap } from "gsap";
+import { Cpu, Monitor, Box, Database } from "lucide-react";
 import "./TextContent.css";
 
 const TextContent = () => {
@@ -196,23 +195,22 @@ const TextContent = () => {
   ];
 
   const { scrollYProgress } = useScroll();
-
   const imageIndex = useTransform(scrollYProgress, [0, 0.4], [0, images.length - 1]);
-  
   const [currentImage, setCurrentImage] = useState(0);
+  const [hoveredStats, setHoveredStats] = useState(null);
+
+  const stats = [
+    { icon: <Cpu className="w-6 h-6" />, label: "Processors", count: "10+" },
+    { icon: <Monitor className="w-6 h-6" />, label: "Graphics", count: "10+" },
+    { icon: <Box className="w-6 h-6" />, label: "Components", count: "100+" },
+    { icon: <Database className="w-6 h-6" />, label: "Storage", count: "10+" },
+  ];
 
   useEffect(() => {
     const unsubscribe = imageIndex.onChange((value) => {
-      setCurrentImage(Math.floor(value)); // Round to the nearest whole number
+      setCurrentImage(Math.floor(value));
     });
-    return () => unsubscribe();
-  }, [imageIndex]);
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.2], ["0%", "-50%"]);
-  const imageOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]); // Fade out the image faster
-
-  useEffect(() => {
     gsap.fromTo(
       ".text-title span",
       { opacity: 0, x: -50 },
@@ -236,11 +234,37 @@ const TextContent = () => {
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 1, stagger: 0.2, delay: 1.2 }
     );
-  }, []);
+
+    gsap.fromTo(
+      ".stats-container",
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, delay: 1.4 }
+    );
+
+    return () => unsubscribe();
+  }, [imageIndex]);
+
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 0.2], ["0%", "-50%"]);
 
   return (
-    <>
-      {/* Motion applied to fade out on scroll */}
+    <div className="relative">
+      <motion.div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(45deg, rgba(0,0,255,0.1) 0%, rgba(0,255,255,0.1) 100%)",
+          opacity: 0.1,
+        }}
+        animate={{
+          backgroundPosition: ["0% 0%", "100% 100%"],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+      />
+
       <motion.h1 className="text-title" style={{ opacity, y }}>
         {"BUILD YOUR DREAM PC WITH EASE".split("").map((char, index) => (
           <motion.span key={index} style={{ opacity, y }}>
@@ -249,10 +273,44 @@ const TextContent = () => {
         ))}
       </motion.h1>
 
+      <motion.div 
+        className="stats-container flex justify-center gap-8 mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+      >
+        {stats.map((stat, index) => (
+          <motion.div
+            key={index}
+            className="stat-item bg-gray-800/30 p-4 rounded-lg backdrop-blur-sm hover:bg-gray-800/50 transition-all cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            onHoverStart={() => setHoveredStats(index)}
+            onHoverEnd={() => setHoveredStats(null)}
+          >
+            <div className="flex items-center gap-2">
+              {stat.icon}
+              <div>
+                <div className="text-blue-400 font-bold">{stat.count}</div>
+                <div className="text-sm text-gray-300">{stat.label}</div>
+              </div>
+            </div>
+            {hoveredStats === index && (
+              <motion.div
+                className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-2 py-1 rounded text-sm"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+              >
+                View All
+              </motion.div>
+            )}
+          </motion.div>
+        ))}
+      </motion.div>
+
       <div className="container2">
         <motion.div className="text-section" style={{ opacity, y }}>
           <p className="text-subtitle">
-            Whether it’s for gaming, productivity, or performance, we help you
+            Whether it's for gaming, productivity, or performance, we help you
             create the perfect setup.
           </p>
 
@@ -275,10 +333,8 @@ const TextContent = () => {
           </div>
         </motion.div>
 
-        {/* Image Section with Framer Motion */}
         <div className="image-section">
           <motion.img
-            // style={{ imageOpacity, y }}
             key={currentImage}
             src={images[currentImage]}
             alt="Custom PC"
@@ -293,25 +349,8 @@ const TextContent = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
 export default TextContent;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+
 .container2 {
     display: flex;
     flex-direction: row;
@@ -20,8 +21,8 @@
 }
 
 .text-title {
-    font-family: "Poppins" sans-serif;
-    margin-top: 20px;
+    font-family: "Lato", sans-serif;
+    /* margin-top: 20px; */
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 5px;
@@ -169,6 +170,19 @@
 
 
 
-
+.stats-container {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .stat-item {
+    position: relative;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+  
+  .stat-item:hover {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+  }
 
 

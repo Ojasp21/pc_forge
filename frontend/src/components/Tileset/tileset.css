@@ -183,11 +183,12 @@ text-align: right;
 
 /* Tiles section */
 #outer {
-flex: 2;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-gap: 20px;
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Forces exactly 4 columns */
+  gap: 20px;
 }
+
 
 .item {
 display: grid;
