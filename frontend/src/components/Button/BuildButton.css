@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 .build-btn {
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Poppins', sans-serif;
     position: relative;
     z-index: 1;
     background: linear-gradient(135deg, #0d2a50, #00192e);
