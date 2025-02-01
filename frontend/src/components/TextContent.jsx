@@ -197,7 +197,7 @@ const TextContent = () => {
 
   const { scrollYProgress } = useScroll();
 
-  const imageIndex = useTransform(scrollYProgress, [0, 0.25], [0, images.length - 1]);
+  const imageIndex = useTransform(scrollYProgress, [0, 0.4], [0, images.length - 1]);
   
   const [currentImage, setCurrentImage] = useState(0);
 
