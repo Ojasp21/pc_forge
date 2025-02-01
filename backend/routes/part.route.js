@@ -1,6 +1,6 @@
 import express from "express";
 import Part from "../models/Part.js";
-
+import Accessories from "../models/Accessories.js"
 const router = express.Router();
 
 router.get('/parts/:id', async (req, res) => {
@@ -26,11 +26,30 @@ router.get('/category/:category', async (req, res) => {
 });
 
 
-// Example route for categories (add this to your backend)
+
 router.get('/categories', async (req, res) => {
   // Get distinct categories from the database
   const categories = await Part.distinct('category');
   res.json(categories);
 });
+
+router.get('/accessories/categories', async (req, res) => {
+  try {
+    const categories = await Accessories.distinct('category');
+    res.json(categories);
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching accessory categories' });
+  }
+});
+
+router.get('/accessories/category/:category', async (req, res) => {
+  try {
+    const parts = await Accessories.find({ category: req.params.category });
+    res.json(parts);
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching accessories by category' });
+  }
+});
+
 
 export default router;

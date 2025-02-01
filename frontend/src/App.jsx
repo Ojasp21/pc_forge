@@ -26,7 +26,7 @@ import { useEffect } from "react";
 import LangFlowAPIComponent from "./components/Langflow.jsx";
 import useBuildStore from "./store/useBuildStore.js";
 import AllCards from "./accessories/Allcards.jsx";
-import ProductsPage from "./accessories/Productpage.jsx";
+import ProductsPage from "./accessories/ProductPage.jsx";
 import HomePageFooter from "./components/footer/HomePageFooter.jsx";
 import FAQPage from "./components/FAQPage.jsx";
 import Checkout from "./pages/Checkout.jsx";
@@ -71,7 +71,7 @@ function App() {
               <Route path="/editing-container2" element={<EditingContainer2 />} />
               <Route path="/langflow" element={<LangFlowAPIComponent />} />
               <Route path="/accessories" element={<AllCards />} />
-              <Route path="/category/:categoryName" element={<ProductsPage />} />
+              <Route path="/accessories/:category" element={<ProductsPage />} />
               <Route path="/faqs" element={<FAQPage />} />
               <Route path="/checkout" element={<Checkout {...cartData} />} />
             </Routes>

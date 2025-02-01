@@ -3,6 +3,7 @@
 
 import mongoose from "mongoose";
 import Part from "./models/Part.js";
+import Accessories from "./models/Accessories.js";
 
 mongoose.connect('mongodb+srv://akashkawle2995:mongodb2995@cluster0.85no6.mongodb.net/pcforge?retryWrites=true&w=majority&appName=Cluster0')
   .then(() => {
@@ -14,257 +15,79 @@ mongoose.connect('mongodb+srv://akashkawle2995:mongodb2995@cluster0.85no6.mongod
 const seedParts = async () => {
   try {
     
-    // await Part.deleteMany({});
+    // await Part.deleteMany({ category: "Keyboard"});
     // console.log("Existing parts removed.");
 
-    const parts = [
+    const parts =[
         {
-            "title": "Cooler Master MWE 850 Gold V2 Power Supply - Fully Modular | 80 Plus Gold Certified | 120mm HDB Fan | DC-to-DC Circuit Design | 2 EPS Connectors | 850 Watt",
-            "price": "10,488",
-            "rating": "4.0 out of 5 stars",
-            "link": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTozMTA0OTAxMDk2ODcwMjc0OjE3MzczOTQ1OTk6c3BfYXRmOjIwMDY3NTAxNjIwNTAxOjowOjo&url=%2FCooler-Master-Certified-Modular-Supply%2Fdp%2FB08H2PJS7G%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.IBhuYN7_wnftzjsFAzBczvPDMVqT9_o3d34afcuGN6W932f2IkVX4mB_H7jRJpXJ3NnskosNOoV8GsihGN8LjdwKrBJiS4UUOmojKY-U2bc1ooxj5stxBZjREh-0S_gtp1OQLcqAqRH5JlwIGBJwosgQ7nFgU0ooXoPOhyLIfvSVs4J9nmC18xRZoTWM9nkI5CM3yFvB4FXdhFLtoiE37yuAoGDyGc5SCK-1ppfQaMY._uuShvNFFyJCQpDdI6b5FsWQ45XDWCfl6pe7Jtmw9Vo%26dib_tag%3Dse%26keywords%3DPower%2BSupply%26qid%3D1737394599%26sr%3D8-1-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
-            "image_url": "https://m.media-amazon.com/images/I/81xSZbfz8fL._AC_UY218_.jpg",
-            "category": "PSU",
-            "details": {
-                "Brand": "Cooler Master",
-                "Manufacturer": "Cooler Master",
-                "Series": "MWE Gold",
-                "Colour": "MWE V850 Gold V2",
-                "Form Factor": "ATX",
-                "Item Height": "8.6 Centimeters",
-                "Item Width": "15 Centimeters",
-                "Product Dimensions": "14 x 15 x 8.6 cm; 2.25 kg",
-                "Item model number": "MPE-8501-AFAAG-IN",
-                "Wattage": "850 Watts",
-                "Are Batteries Included": "No",
-                "Country of Origin": "China",
-                "Item Weight": "2 kg 250 g"
-            }
+            "title": "Logitech G435 Light Speed and Lightweight Gaming Bluetooth Wireless Over Ear Headphones with Mic, 18H Battery, Compatible for Dolby Atmos, Pc, Ps4, Ps5, Mobile - (Black)",
+            "price": "5,495",
+            "rating": "3.9 out of 5 stars",
+            "link": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo0MzM1NDM5OTIyNzc4NzE2OjE3MzgzNDAwMjg6c3BfYXRmOjMwMDQ1Nzg3OTc2NDYzMjo6MDo6&url=%2FLogitech-G435-Lightspeed-Bluetooth-Wireless%2Fdp%2FB09GFYV9YJ%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.emjpkmLAXJb47aExK_UN7-sX9T9ArnPsq4nvrttjtss4DkQtCXRpdmPBrkWqrBwTU3J8hPfSjUeq5adb4KIfim2ttxW5nHTBWYL6IGhpSCOa8k1rgIW-od0E24Sgk6BgSpk1m_ikcUn6Ll7UC5j1ugjhPkD4RkQeY7fWX6U6lzFrWMdxVH4_WnGeqJoKgcJUaJGuluXGyHC2U6-ZMgZe2HcfGKgN26wJPeH7Tkg8Onc.IsvpEG98i4vAm6TStBQ6LFWoOzv09pr6UUUT4jc8QsE%26dib_tag%3Dse%26keywords%3Dlogitech%2Bheadphones%26nsdOptOutParam%3Dtrue%26qid%3D1738340028%26sr%3D8-1-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
+            "image_url": "https://m.media-amazon.com/images/I/81bQEkMevBL._AC_UY218_.jpg",
+            "category": "Headphones"
         },
         {
-            "title": "CORSAIR CX Series CX750 80 Plus Bronze ATX Power Supply, A 120mm thermally Controlled Low-Noise Cooling Fan, Compact 125mm-long casing,",
-            "price": "6,288",
-            "rating": "4.7 out of 5 stars",
-            "link": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTozMTA0OTAxMDk2ODcwMjc0OjE3MzczOTQ1OTk6c3BfYXRmOjMwMDI1ODU5Mjk1MDMzMjo6MDo6&url=%2FCORSAIR-thermally-controlled-low-noise-125mm-long%2Fdp%2FB0CRKKDF88%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.IBhuYN7_wnftzjsFAzBczvPDMVqT9_o3d34afcuGN6W932f2IkVX4mB_H7jRJpXJ3NnskosNOoV8GsihGN8LjdwKrBJiS4UUOmojKY-U2bc1ooxj5stxBZjREh-0S_gtp1OQLcqAqRH5JlwIGBJwosgQ7nFgU0ooXoPOhyLIfvSVs4J9nmC18xRZoTWM9nkI5CM3yFvB4FXdhFLtoiE37yuAoGDyGc5SCK-1ppfQaMY._uuShvNFFyJCQpDdI6b5FsWQ45XDWCfl6pe7Jtmw9Vo%26dib_tag%3Dse%26keywords%3DPower%2BSupply%26qid%3D1737394599%26sr%3D8-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
-            "image_url": "https://m.media-amazon.com/images/I/710YVc9mZ1L._AC_UY218_.jpg",
-            "category": "PSU",
-            "details": {
-                "Brand": "Corsair",
-                "Manufacturer": "CORSAIR",
-                "Series": "CORSAIR CX Series CX750 80 PLUS Bronze ATX Power Supply",
-                "Colour": "BLACK",
-                "Form Factor": "ATX",
-                "Item Height": "8.6 Centimeters",
-                "Item Width": "15 Centimeters",
-                "Product Dimensions": "12.5 x 15 x 8.6 cm; 2 kg",
-                "Item model number": "CP-9020279-IN",
-                "Wattage": "750 Watts",
-                "Are Batteries Included": "No",
-                "Country of Origin": "China",
-                "Item Weight": "2 kg"
-            }
+            "title": "Logitech G733 Lightspeed Wireless Gaming Headset with Suspension Over Ear Headband, LIGHTSYNC RGB, Blue VO!CE mic Technology and PRO-G Audio Drivers - Black",
+            "price": "14,995",
+            "rating": "4.3 out of 5 stars",
+            "link": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo0MzM1NDM5OTIyNzc4NzE2OjE3MzgzNDAwMjg6c3BfYXRmOjIwMDc5MDIzMjk2MjA0OjowOjo&url=%2FLogitech-Lightspeed-Suspension-LIGHTSYNC-Technology%2Fdp%2FB08HNCG8WQ%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.emjpkmLAXJb47aExK_UN7-sX9T9ArnPsq4nvrttjtss4DkQtCXRpdmPBrkWqrBwTU3J8hPfSjUeq5adb4KIfim2ttxW5nHTBWYL6IGhpSCOa8k1rgIW-od0E24Sgk6BgSpk1m_ikcUn6Ll7UC5j1ugjhPkD4RkQeY7fWX6U6lzFrWMdxVH4_WnGeqJoKgcJUaJGuluXGyHC2U6-ZMgZe2HcfGKgN26wJPeH7Tkg8Onc.IsvpEG98i4vAm6TStBQ6LFWoOzv09pr6UUUT4jc8QsE%26dib_tag%3Dse%26keywords%3Dlogitech%2Bheadphones%26nsdOptOutParam%3Dtrue%26qid%3D1738340028%26sr%3D8-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
+            "image_url": "https://m.media-amazon.com/images/I/71xNjrzG69L._AC_UY218_.jpg",
+            "category": "Headphones"
         },
-        {
-            "title": "Ant Esports VS400L NonModular High Efficiency Gaming Power Supply/PSU with Continuous Power and 120mm Silent Fan",
-            "price": "1,241",
-            "rating": "4.2 out of 5 stars",
-            "link": "https://www.amazon.in/Ant-Esports-VS400L-Power-Supply/dp/B09XQRMBCK/ref=sr_1_3?dib=eyJ2IjoiMSJ9.IBhuYN7_wnftzjsFAzBczvPDMVqT9_o3d34afcuGN6W932f2IkVX4mB_H7jRJpXJ3NnskosNOoV8GsihGN8LjdwKrBJiS4UUOmojKY-U2bc1ooxj5stxBZjREh-0S_gtp1OQLcqAqRH5JlwIGBJwosgQ7nFgU0ooXoPOhyLIfvSVs4J9nmC18xRZoTWM9nkI5CM3yFvB4FXdhFLtoiE37yuAoGDyGc5SCK-1ppfQaMY._uuShvNFFyJCQpDdI6b5FsWQ45XDWCfl6pe7Jtmw9Vo&dib_tag=se&keywords=Power+Supply&qid=1737394599&sr=8-3",
-            "image_url": "https://m.media-amazon.com/images/I/81oRnnKIzTL._AC_UY218_.jpg",
-            "category": "PSU",
-            "details": {
-                "Brand": "Ant Esports",
-                "Manufacturer": "Ant Esports",
-                "Product Dimensions": "26.7 x 11.3 x 19.5 cm; 1.4 kg",
-                "Hardware Platform": "PC",
-                "Compatible Devices": "pc",
-                "Mounting Hardware": "Power Supply, Power Cable, Mounting Screws, User Manual",
-                "Number of items": "1",
-                "Audio Wattage": "400 Watts",
-                "Wattage": "400 Watts",
-                "Batteries Included": "No",
-                "Batteries Required": "No",
-                "Material": "other",
-                "Form Factor": "ATX",
-                "Country of Origin": "China",
-                "Item Weight": "1 kg 400 g"
+        
+            {
+                "title": "HyperX Cloud Stinger 2 Core Gaming Headset PS, 3.5mm Wired Connection, 40mm Sound Drivers, Lightweight, Over-Ear, Swivel-to-Mute mic, PlayStation-Licensed, Soft Foam Ear Cushion, White, 275g, 6H9B5AA",
+                "price": "3,690",
+                "rating": "4.0 out of 5 stars",
+                "link": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo4MTczNzM4NDA3MzQ2Mjc6MTczODMzOTkzMzpzcF9hdGY6MzAwMjU5NjI5MTUwNDMyOjowOjo&url=%2FHyperX-Connection-Lightweight-PlayStation-Licensed-6H9B5AA%2Fdp%2FB0BDGMNF6V%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.EticCW57cQlKe1fiXCB_E6x8yp6o4pD-GZPffHyVWz1bEdvdAuuvY5lwY1OnhC7BKNSLgwEHJgCRVtR33PdUwiMOZJ7bNaRqG5qsqP-dXq-KYR3QKIXNKJVfgBq37H_aPdJQSx5CX4yLwSZnmTodvBIi5Zyz3PlghbsC88qTzfhBz9O1DJnR0h72svOPzs7Gdntkx4XRxHChOjPypLmQIhu0mPZENBJGYF6SYAKSEGU.rYfSwGgelD2vEwfbo6qowdCo9aNGcYrz2zo7uxh2gf8%26dib_tag%3Dse%26keywords%3Dgaming%2Bheadphones%26qid%3D1738339933%26sr%3D8-1-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
+                "image_url": "https://m.media-amazon.com/images/I/61GywIq-pwL._AC_UY218_.jpg",
+                "category": "Headphones"
+            },
+            {
+                "title": "HyperX Cloud Stinger 2 Core Essential PC Gaming Wired Headset, Lightweight Over-Ear Headset with mic, Swivel-to-Mute Function, 40mm Drivers (683L9AA, Black)",
+                "price": "3,337",
+                "rating": "3.9 out of 5 stars",
+                "link": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTo4MTczNzM4NDA3MzQ2Mjc6MTczODMzOTkzMzpzcF9hdGY6MzAwMTQ1ODg3MDg0MDMyOjowOjo&url=%2FHyperX-Essential-Lightweight-Over-Ear-683L9AA%2Fdp%2FB0BCFKG49M%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.EticCW57cQlKe1fiXCB_E6x8yp6o4pD-GZPffHyVWz1bEdvdAuuvY5lwY1OnhC7BKNSLgwEHJgCRVtR33PdUwiMOZJ7bNaRqG5qsqP-dXq-KYR3QKIXNKJVfgBq37H_aPdJQSx5CX4yLwSZnmTodvBIi5Zyz3PlghbsC88qTzfhBz9O1DJnR0h72svOPzs7Gdntkx4XRxHChOjPypLmQIhu0mPZENBJGYF6SYAKSEGU.rYfSwGgelD2vEwfbo6qowdCo9aNGcYrz2zo7uxh2gf8%26dib_tag%3Dse%26keywords%3Dgaming%2Bheadphones%26qid%3D1738339933%26sr%3D8-2-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
+                "image_url": "https://m.media-amazon.com/images/I/71WXVepOnFL._AC_UY218_.jpg",
+                "category": "Headphones"
+            },
+            {
+                "title": "Ant Esports H520W World Of Warships Edition Lightweight Gaming Over Ear Wired Headphones with Mic| 3.5MM Jack |50 MM Drivers | Compatible with PC/ PS4 / Xbox One / Nintendo / Mobile (White)",
+                "price": "749",
+                "rating": "3.6 out of 5 stars",
+                "link": "https://www.amazon.in/Ant-Esports-Nintendo-Computer-Warships/dp/B081Q7S6YX/ref=sr_1_8?dib=eyJ2IjoiMSJ9.EticCW57cQlKe1fiXCB_E6x8yp6o4pD-GZPffHyVWz1bEdvdAuuvY5lwY1OnhC7BKNSLgwEHJgCRVtR33PdUwiMOZJ7bNaRqG5qsqP-dXq-KYR3QKIXNKJVfgBq37H_aPdJQSx5CX4yLwSZnmTodvBIi5Zyz3PlghbsC88qTzfhBz9O1DJnR0h72svOPzs7Gdntkx4XRxHChOjPypLmQIhu0mPZENBJGYF6SYAKSEGU.rYfSwGgelD2vEwfbo6qowdCo9aNGcYrz2zo7uxh2gf8&dib_tag=se&keywords=gaming+headphones&qid=1738339933&sr=8-8",
+                "image_url": "https://m.media-amazon.com/images/I/51g8jKlBg9L._AC_UY218_.jpg",
+                "category": "Headphones"
+            },
+            {
+                "title": "Ant Esports H530 Multi-Platform Pro RGB Gaming Headsetfor PC / PS4 / PS5 / Xbox One / Switch1 with mic, Black Red",
+                "price": "999",
+                "rating": "3.6 out of 5 stars",
+                "link": "https://www.amazon.in/Ant-Esports-Gaming-Headset-H530/dp/B08D5ZK45K/ref=sr_1_18?dib=eyJ2IjoiMSJ9.EticCW57cQlKe1fiXCB_E6x8yp6o4pD-GZPffHyVWz1bEdvdAuuvY5lwY1OnhC7BKNSLgwEHJgCRVtR33PdUwiMOZJ7bNaRqG5qsqP-dXq-KYR3QKIXNKJVfgBq37H_aPdJQSx5CX4yLwSZnmTodvBIi5Zyz3PlghbsC88qTzfhBz9O1DJnR0h72svOPzs7Gdntkx4XRxHChOjPypLmQIhu0mPZENBJGYF6SYAKSEGU.rYfSwGgelD2vEwfbo6qowdCo9aNGcYrz2zo7uxh2gf8&dib_tag=se&keywords=gaming+headphones&qid=1738339933&sr=8-18",
+                "image_url": "https://m.media-amazon.com/images/I/51eOGiQbsgL._AC_UY218_.jpg",
+                "category": "Headphones"
             }
-        },
+        ,
+        
         {
-            "title": "Ant Esports VS450L Non-Modular High Efficiency Gaming Power Supply/PSU with 1 x PCIe and 120mm Silent Fan",
-            "price": "1,673",
-            "rating": "4.2 out of 5 stars",
-            "link": "https://www.amazon.in/Ant-Esports-VS450L-Power-Supply/dp/B09XQS95CR/ref=sr_1_5?dib=eyJ2IjoiMSJ9.IBhuYN7_wnftzjsFAzBczvPDMVqT9_o3d34afcuGN6W932f2IkVX4mB_H7jRJpXJ3NnskosNOoV8GsihGN8LjdwKrBJiS4UUOmojKY-U2bc1ooxj5stxBZjREh-0S_gtp1OQLcqAqRH5JlwIGBJwosgQ7nFgU0ooXoPOhyLIfvSVs4J9nmC18xRZoTWM9nkI5CM3yFvB4FXdhFLtoiE37yuAoGDyGc5SCK-1ppfQaMY._uuShvNFFyJCQpDdI6b5FsWQ45XDWCfl6pe7Jtmw9Vo&dib_tag=se&keywords=Power+Supply&qid=1737394599&sr=8-5",
-            "image_url": "https://m.media-amazon.com/images/I/81tVHkPgIJL._AC_UY218_.jpg",
-            "category": "PSU",
-            "details": {
-                "Brand": "Ant Esports",
-                "Manufacturer": "Ant Esports",
-                "Product Dimensions": "26.7 x 11.3 x 19.5 cm; 1.4 kg",
-                "Hardware Platform": "PC",
-                "Compatible Devices": "pc",
-                "Mounting Hardware": "Power Supply, Power Cable, Mounting Screws, User Manual",
-                "Number of items": "1",
-                "Audio Wattage": "450 Watts",
-                "Wattage": "450 Watts",
-                "Batteries Included": "No",
-                "Batteries Required": "No",
-                "Material": "other",
-                "Form Factor": "ATX",
-                "Country of Origin": "China",
-                "Item Weight": "1 kg 400 g"
+                "title": "Logitech G435 Light Speed and Lightweight Gaming Bluetooth Wireless Over Ear Headphones with Mic, 18H Battery, Compatible for Dolby Atmos, Pc, Ps4, Ps5, Mobile - (Black)",
+                "price": "5,495",
+                "rating": "3.9 out of 5 stars",
+                "link": "https://www.amazon.in/Logitech-G435-Lightspeed-Bluetooth-Wireless/dp/B09GFYV9YJ/ref=sr_1_5?dib=eyJ2IjoiMSJ9.emjpkmLAXJb47aExK_UN7-sX9T9ArnPsq4nvrttjtss4DkQtCXRpdmPBrkWqrBwTU3J8hPfSjUeq5adb4KIfim2ttxW5nHTBWYL6IGhpSCOa8k1rgIW-od0E24Sgk6BgSpk1m_ikcUn6Ll7UC5j1ugjhPkD4RkQeY7fWX6U6lzFrWMdxVH4_WnGeqJoKgcJUaJGuluXGyHC2U6-ZMgZe2HcfGKgN26wJPeH7Tkg8Onc.IsvpEG98i4vAm6TStBQ6LFWoOzv09pr6UUUT4jc8QsE&dib_tag=se&keywords=logitech+headphones&nsdOptOutParam=true&qid=1738340028&sr=8-5",
+                "image_url": "https://m.media-amazon.com/images/I/81bQEkMevBL._AC_UY218_.jpg",
+                "category": "Headphones"
+            },
+            {
+                "title": "Logitech G435 Lightspeed and Bluetooth Wireless Over Ear Gaming Headphones - Lightweight with Dual mics, 18h Battery, Compatible with Dolby Atmos, PC, PS4, PS5, Mobile - White",
+                "price": "4,999",
+                "rating": "3.8 out of 5 stars",
+                "link": "https://www.amazon.in/Logitech-G435-Lightspeed-Bluetooth-Wireless/dp/B09GFZCC7V/ref=sr_1_10?dib=eyJ2IjoiMSJ9.emjpkmLAXJb47aExK_UN7-sX9T9ArnPsq4nvrttjtss4DkQtCXRpdmPBrkWqrBwTU3J8hPfSjUeq5adb4KIfim2ttxW5nHTBWYL6IGhpSCOa8k1rgIW-od0E24Sgk6BgSpk1m_ikcUn6Ll7UC5j1ugjhPkD4RkQeY7fWX6U6lzFrWMdxVH4_WnGeqJoKgcJUaJGuluXGyHC2U6-ZMgZe2HcfGKgN26wJPeH7Tkg8Onc.IsvpEG98i4vAm6TStBQ6LFWoOzv09pr6UUUT4jc8QsE&dib_tag=se&keywords=logitech+headphones&nsdOptOutParam=true&qid=1738340028&sr=8-10",
+                "image_url": "https://m.media-amazon.com/images/I/81WfRjLX93L._AC_UY218_.jpg",
+                "category": "Headphones"
             }
-        },
-        {
-            "title": "FRONTECH 450 Watts SMPS Power Supply Unit, Compliant with ATX 12V, 20/24 Pin Main Power, Power Protection, (PS-0005, Grey)",
-            "price": "600",
-            "rating": "3.5 out of 5 stars",
-            "link": "https://www.amazon.in/FRONTECH-Supply-Compliant-Protection-PS-0005/dp/B009CVTPZE/ref=sr_1_7?dib=eyJ2IjoiMSJ9.IBhuYN7_wnftzjsFAzBczvPDMVqT9_o3d34afcuGN6W932f2IkVX4mB_H7jRJpXJ3NnskosNOoV8GsihGN8LjdwKrBJiS4UUOmojKY-U2bc1ooxj5stxBZjREh-0S_gtp1OQLcqAqRH5JlwIGBJwosgQ7nFgU0ooXoPOhyLIfvSVs4J9nmC18xRZoTWM9nkI5CM3yFvB4FXdhFLtoiE37yuAoGDyGc5SCK-1ppfQaMY._uuShvNFFyJCQpDdI6b5FsWQ45XDWCfl6pe7Jtmw9Vo&dib_tag=se&keywords=Power+Supply&qid=1737394599&sr=8-7",
-            "image_url": "https://m.media-amazon.com/images/I/81y-qVnfcJL._AC_UY218_.jpg",
-            "category": "PSU",
-            "details": {
-                "Brand": "FRONTECH",
-                "Manufacturer": "Nuevotech Industries Pvt Ltd",
-                "Model": "PS-0005",
-                "Model Name": "SMPS ( PS-0005 )",
-                "Product Dimensions": "15 x 11 x 8.4 cm; 620 g",
-                "Item model number": "PS-0005",
-                "Operating System": "Windows 7, Windows 10",
-                "Hardware Platform": "PC",
-                "Compatible Devices": "pc",
-                "Special Features": "Compliant with ATX 12V. \u2022 20/24 pin Main Power Connector. \u2022 Supports Multi-Core CPU.(Intel/AMD) \u2022Supports Serial ATA (SATA) Interface-2 Connectors & PATA Interface-2 \u2022 Support Power Protections \u2022. Over Current. (OCP) \u2022. Over Voltage. (OVP) \u2022. Short-Circuit (SCP) \u2022 8 cm Cooling fan, 1.5 Meter power Cable free",
-                "Mounting Hardware": "PSU",
-                "Number of items": "1",
-                "Audio Wattage": "450 Watts",
-                "Voltage": "12 Volts (DC)",
-                "Wattage": "450 Watts",
-                "Power Source": "AC",
-                "Batteries Included": "No",
-                "Batteries Required": "No",
-                "Form Factor": "ATX",
-                "Has Auto Focus": "No",
-                "Programmable Buttons": "No",
-                "Item Weight": "620 g"
-            }
-        },
-        {
-            "title": "Cooler Master MWE 450 Bronze V2 Power Supply - Non-Modular | 80 Plus Bronze Certified | 120mm HDB Fan | DC-to-DC Circuit Design | ATX 2.52 Version | 450 Watt",
-            "price": "3,349",
-            "rating": "4.4 out of 5 stars",
-            "link": "https://www.amazon.in/Cooler-Master-Bronze-Certified-Non-Modular/dp/B08GTF8224/ref=sr_1_8?dib=eyJ2IjoiMSJ9.IBhuYN7_wnftzjsFAzBczvPDMVqT9_o3d34afcuGN6W932f2IkVX4mB_H7jRJpXJ3NnskosNOoV8GsihGN8LjdwKrBJiS4UUOmojKY-U2bc1ooxj5stxBZjREh-0S_gtp1OQLcqAqRH5JlwIGBJwosgQ7nFgU0ooXoPOhyLIfvSVs4J9nmC18xRZoTWM9nkI5CM3yFvB4FXdhFLtoiE37yuAoGDyGc5SCK-1ppfQaMY._uuShvNFFyJCQpDdI6b5FsWQ45XDWCfl6pe7Jtmw9Vo&dib_tag=se&keywords=Power+Supply&qid=1737394599&sr=8-8",
-            "image_url": "https://m.media-amazon.com/images/I/810FP1fdX5L._AC_UY218_.jpg",
-            "category": "PSU",
-            "details": {
-                "Brand": "Cooler Master",
-                "Manufacturer": "Cooler Master",
-                "Series": "MWE Gold",
-                "Form Factor": "ATX",
-                "Item Height": "8.6 Centimeters",
-                "Item Width": "15 Centimeters",
-                "Product Dimensions": "14 x 15 x 8.6 cm; 1.33 kg",
-                "Item model number": "MPE-4501-ACABW-BIN",
-                "Wattage": "450 Watts",
-                "Are Batteries Included": "No",
-                "Item Weight": "1 kg 330 g"
-            }
-        },
-        {
-            "title": "Ant Esports VS600L Non-Modular High Efficiency Gaming Power Supply/PSU with 1 x PCIe and 120mm Silent Fan",
-            "price": "2,229",
-            "rating": "4.2 out of 5 stars",
-            "link": "https://www.amazon.in/Ant-Esports-VS600L-Power-Supply/dp/B09173G65X/ref=sr_1_9?dib=eyJ2IjoiMSJ9.IBhuYN7_wnftzjsFAzBczvPDMVqT9_o3d34afcuGN6W932f2IkVX4mB_H7jRJpXJ3NnskosNOoV8GsihGN8LjdwKrBJiS4UUOmojKY-U2bc1ooxj5stxBZjREh-0S_gtp1OQLcqAqRH5JlwIGBJwosgQ7nFgU0ooXoPOhyLIfvSVs4J9nmC18xRZoTWM9nkI5CM3yFvB4FXdhFLtoiE37yuAoGDyGc5SCK-1ppfQaMY._uuShvNFFyJCQpDdI6b5FsWQ45XDWCfl6pe7Jtmw9Vo&dib_tag=se&keywords=Power+Supply&qid=1737394599&sr=8-9",
-            "image_url": "https://m.media-amazon.com/images/I/61nLCaWm+pL._AC_UY218_.jpg",
-            "category": "PSU",
-            "details": {
-                "Brand": "Ant Esports",
-                "Manufacturer": "Ant Esports",
-                "Model": "VS600L",
-                "Product Dimensions": "26.7 x 11.3 x 19.5 cm; 1.8 kg",
-                "Item model number": "VS600L",
-                "Hardware Platform": "PC",
-                "Compatible Devices": "pc",
-                "Mounting Hardware": "Power Supply, Power Cable, Mounting Screws, User Manual",
-                "Number of items": "1",
-                "Audio Wattage": "600 Watts",
-                "Wattage": "600 Watts",
-                "Batteries Included": "No",
-                "Batteries Required": "No",
-                "Form Factor": "ATX",
-                "Country of Origin": "China",
-                "Item Weight": "1 kg 800 g"
-            }
-        },
-        {
-            "title": "MSI MAG A650BN Power Supply Unit - 650W, 80 Plus Bronze Certified, 12V Single-Rail, DC-to-DC Circuit, 120mm Fan, Active PFC Design, Multiple Connectivity, for Gaming PC, 5-Year Warranty",
-            "price": "4,790",
-            "rating": "4.4 out of 5 stars",
-            "link": "https://www.amazon.in/MSI-A650BN-Gaming-Power-Supply/dp/B09GW3QZLJ/ref=sr_1_10?dib=eyJ2IjoiMSJ9.IBhuYN7_wnftzjsFAzBczvPDMVqT9_o3d34afcuGN6W932f2IkVX4mB_H7jRJpXJ3NnskosNOoV8GsihGN8LjdwKrBJiS4UUOmojKY-U2bc1ooxj5stxBZjREh-0S_gtp1OQLcqAqRH5JlwIGBJwosgQ7nFgU0ooXoPOhyLIfvSVs4J9nmC18xRZoTWM9nkI5CM3yFvB4FXdhFLtoiE37yuAoGDyGc5SCK-1ppfQaMY._uuShvNFFyJCQpDdI6b5FsWQ45XDWCfl6pe7Jtmw9Vo&dib_tag=se&keywords=Power+Supply&qid=1737394599&sr=8-10",
-            "image_url": "https://m.media-amazon.com/images/I/71pU8A2UE9L._AC_UY218_.jpg",
-            "category": "PSU",
-            "details": {
-                "Brand": "MSI",
-                "Manufacturer": "MSI",
-                "Model": "306-7ZP2B18-CE0",
-                "Model Name": "MAG A650BN",
-                "Product Dimensions": "16 x 15 x 8.6 cm; 1.59 kg",
-                "Item model number": "306-7ZP2B18-CE0",
-                "Compatible Devices": "gaming pc,pc",
-                "Number of items": "1",
-                "Audio Wattage": "650",
-                "Voltage": "240 Volts",
-                "Wattage": "650 Watts",
-                "Batteries Included": "No",
-                "Batteries Required": "No",
-                "Form Factor": "ATX12V",
-                "Country of Origin": "China",
-                "Item Weight": "1 kg 590 g"
-            }
-        },
-        {
-            "title": "Ant Esports FG650 Gaming Power Supply I Force Series 80 Plus Gold Certified PSU I 120mm Silent Fan I 8 Pin (4+4) CPU Connector I 3 Years Warranty",
-            "price": "5,999",
-            "rating": "4.2 out of 5 stars",
-            "link": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTozMTA0OTAxMDk2ODcwMjc0OjE3MzczOTQ1OTk6c3BfbXRmOjMwMDQ1NDcwODQ3MTEzMjo6MDo6&url=%2FAnt-Esports-FG650-Certified-Connector%2Fdp%2FB0CGTSN9W8%2Fref%3Dsr_1_11_sspa%3Fdib%3DeyJ2IjoiMSJ9.IBhuYN7_wnftzjsFAzBczvPDMVqT9_o3d34afcuGN6W932f2IkVX4mB_H7jRJpXJ3NnskosNOoV8GsihGN8LjdwKrBJiS4UUOmojKY-U2bc1ooxj5stxBZjREh-0S_gtp1OQLcqAqRH5JlwIGBJwosgQ7nFgU0ooXoPOhyLIfvSVs4J9nmC18xRZoTWM9nkI5CM3yFvB4FXdhFLtoiE37yuAoGDyGc5SCK-1ppfQaMY._uuShvNFFyJCQpDdI6b5FsWQ45XDWCfl6pe7Jtmw9Vo%26dib_tag%3Dse%26keywords%3DPower%2BSupply%26qid%3D1737394599%26sr%3D8-11-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1",
-            "image_url": "https://m.media-amazon.com/images/I/81Eo1ExtPfL._AC_UY218_.jpg",
-            "category": "PSU",
-            "details": {
-                "Brand": "Ant Esports",
-                "Manufacturer": "Ant Esports",
-                "Series": "FG650",
-                "Form Factor": "ATX",
-                "Item Height": "19.5 Centimeters",
-                "Item Width": "11.3 Centimeters",
-                "Product Dimensions": "26.7 x 11.3 x 19.5 cm; 1.5 kg",
-                "Item model number": "FG650",
-                "Wattage": "650 Watts",
-                "Are Batteries Included": "No",
-                "Country of Origin": "China",
-                "Item Weight": "1 kg 500 g"
-            }
-        },
-        {
-            "title": "CORSAIR RM1000e (2023) Fully Modular Low-Noise ATX Power Supply - ATX 3.0 & PCIe 5.0 Compliant - 105\u00b0C-Rated Capacitors - 80 Plus Gold Efficiency - Modern Standby Support",
-            "price": "19,499",
-            "rating": "4.7 out of 5 stars",
-            "link": "https://www.amazon.in/sspa/click?ie=UTF8&spc=MTozMTA0OTAxMDk2ODcwMjc0OjE3MzczOTQ1OTk6c3BfbXRmOjMwMDAxNTM2ODc1MjUzMjo6MDo6&url=%2FCORSAIR-RM1000e-Modular-Low-Noise-Supply%2Fdp%2FB0C4TWH4JK%2Fref%3Dsr_1_12_sspa%3Fdib%3DeyJ2IjoiMSJ9.IBhuYN7_wnftzjsFAzBczvPDMVqT9_o3d34afcuGN6W932f2IkVX4mB_H7jRJpXJ3NnskosNOoV8GsihGN8LjdwKrBJiS4UUOmojKY-U2bc1ooxj5stxBZjREh-0S_gtp1OQLcqAqRH5JlwIGBJwosgQ7nFgU0ooXoPOhyLIfvSVs4J9nmC18xRZoTWM9nkI5CM3yFvB4FXdhFLtoiE37yuAoGDyGc5SCK-1ppfQaMY._uuShvNFFyJCQpDdI6b5FsWQ45XDWCfl6pe7Jtmw9Vo%26dib_tag%3Dse%26keywords%3DPower%2BSupply%26qid%3D1737394599%26sr%3D8-12-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1",
-            "image_url": "https://m.media-amazon.com/images/I/61S-P42paWL._AC_UY218_.jpg",
-            "category": "PSU",
-            "details": {
-                "Brand": "Corsair",
-                "Manufacturer": "Corsair",
-                "Series": "RM1000e",
-                "Form Factor": "ATX",
-                "Item Height": "14 Centimeters",
-                "Item Width": "8.6 Centimeters",
-                "Product Dimensions": "15 x 8.6 x 14 cm; 1.66 kg",
-                "Item model number": "CP-9020264-IN",
-                "Hardware Platform": "PC",
-                "Are Batteries Included": "No",
-                "Country of Origin": "China",
-                "Item Weight": "1 kg 660 g"
-            }
-        }
-    ]
-    await Part.insertMany(parts);
+        ]
+    await Accessories.insertMany(parts);
     console.log("Database seeded with parts.");
     mongoose.connection.close();
   } catch (err) {
