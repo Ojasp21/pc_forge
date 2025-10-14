@@ -88,15 +88,30 @@ export const login = async (req, res) => {
     }
 };
 
+// export const logout = (req, res) => {
+//     try {
+//         res.cookie("pcjwt", "", {maxAge: 0});
+//         res.status(200).json({message: "Logged out successfully."})
+//     } catch(error) {
+//         console.log("Error in logout controller", error.message);
+//         res.status(500).json({message:"Internal Server Error"}); 
+//     }
+// };
 export const logout = (req, res) => {
-    try {
-        res.cookie("pcjwt", "", {maxAge: 0});
-        res.status(200).json({message: "Logged out successfully."})
-    } catch(error) {
-        console.log("Error in logout controller", error.message);
-        res.status(500).json({message:"Internal Server Error"}); 
-    }
+  try {
+    res.clearCookie("pcjwt", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/", // important: must match the path used when setting the cookie
+    });
+    res.status(200).json({ message: "Logged out successfully." });
+  } catch (error) {
+    console.log("Error in logout controller:", error.message);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
 };
+
 
 export const checkAuth = (req, res) => {
     try {
