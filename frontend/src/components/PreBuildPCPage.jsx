@@ -78,7 +78,7 @@ const PrebuildPCPage = () => {
       {/* Gaming PC Section */}
       <motion.div className="pc-section" style={{ opacity }}>
         <h2>Gaming PC</h2>
-        <img src="src/assets/gaming.jpg" alt="Gaming PC" style={{ marginTop: "20px" }} />
+        <img src="/assets/gaming.jpg" alt="Gaming PC" style={{ marginTop: "20px" }} />
         <div className="intro">
           <p>
             The ultimate gaming experience awaits! Designed for seamless performance in modern AAA titles and esports games, this PC delivers immersive visuals and blazing-fast responsiveness.
@@ -94,7 +94,7 @@ const PrebuildPCPage = () => {
       {/* Professional PC Section */}
       <motion.div className="pc-section" style={{ opacity }}>
         <h2>Professional PC</h2>
-        <img src="src/assets/prof.jpg" alt="Professional PC" />
+        <img src="/assets/prof.jpg" alt="Professional PC" />
         <div className="intro">
           <p>
             Power and efficiency combine in this PC, crafted for professionals who demand reliability for high-performance workflows.
@@ -110,7 +110,7 @@ const PrebuildPCPage = () => {
       {/* Editing PC Section */}
       <motion.div className="pc-section" style={{ opacity }}>
         <h2>Editing PC</h2>
-        <img src="src/assets/edit.jpg" alt="Editing PC" style={{ marginBottom: "20px" }} />
+        <img src="/assets/edit.jpg" alt="Editing PC" style={{ marginBottom: "20px" }} />
         <div className="intro">
           <p>
             Unleash your creativity with a PC tailored for photo and video editing, 3D rendering, and content creation.

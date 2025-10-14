@@ -4,7 +4,7 @@ import "./EditingPC.css";
 const EditingPC = () => {
   return ( 
     <>
-  <img className="editbg" src="src/images/Edit.jpg" alt="" />
+  <img className="editbg" src="/images/Edit.jpg" alt="" />
     <div className="editing-pc-container">
       <h1>Editing PC</h1>
       <p>Select the editing PC that suits your workflow:</p>

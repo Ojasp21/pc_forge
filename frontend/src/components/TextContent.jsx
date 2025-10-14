@@ -187,11 +187,11 @@ import "./TextContent.css";
 
 const TextContent = () => {
   const images = [
-    "/src/images/bg1.jpeg",
-    "/src/images/bg2.jpeg",
-    "/src/images/bg3.jpeg",
-    "/src/images/bg4.jpeg",
-    "/src/images/bg5.jpeg",
+    "/images/bg1.jpeg",
+    "/images/bg2.jpeg",
+    "/images/bg3.jpeg",
+    "/images/bg4.jpeg",
+    "/images/bg5.jpeg",
   ];
 
   const { scrollYProgress } = useScroll();

@@ -4,7 +4,7 @@ import "./ProfessionalPC.css";
 const ProfessionalPC = () => {
   return (
     <>
-    <img className="profbg" src="/src/images/Prof.jpg" alt="" />
+    <img className="profbg" src="/images/Prof.jpg" alt="" />
     <div className="professional-pc-container">
       <h1>Professional PC</h1>
       <p>Select the professional PC that fits your specific needs:</p>
