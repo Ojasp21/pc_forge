@@ -50,10 +50,10 @@ export function Tileset({ setCartData }) {
                 title: part.title
             }));
     
-            const response = await axiosInstance.post("/langflow/run-flow",  {parts} );
+            const response = await axiosInstance.post("/gemini/run-flow",  {parts} );
             console.log(response);
             // Update the state with compatibility response
-            setCompatibilityResponse(response.data || "Compatibility check complete!");
+            setCompatibilityResponse(response.data.compatibility || "Compatibility check complete!");
 
         } catch (error) {
             console.error("Error checking compatibility:", error);

@@ -5,9 +5,9 @@ import dotenv from "dotenv"
 import authRoutes from './routes/auth.route.js'
 import partRoutes from './routes/part.route.js'
 import buildRoutes from './routes/build.route.js'
-import langflowRoutes from './routes/langflow.route.js'
 
 import cookieParser from "cookie-parser";
+import GeminiRoutes from './routes/gemini.route.js'
 
 
 const app = express();
@@ -33,7 +33,8 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use("/api/parts", partRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/build", buildRoutes);
-app.use("/api/langflow", langflowRoutes);
+// app.use("/api/langflow", langflowRoutes);
+app.use("/api/gemini", GeminiRoutes);
 
 // Start the server
 const PORT = 2000;
