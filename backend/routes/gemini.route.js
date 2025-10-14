@@ -20,7 +20,8 @@ Parts: ${JSON.stringify(partsDescription, null, 2)}
 
 Respond in exactly one line.
 If all parts are compatible, say: "All parts are compatible."
-Otherwise, list only the incompatible parts in one sentence — do not explain, just name them.
+Otherwise, list only the incompatible parts in one sentence, say : "The following parts are incompatible: [list of incompatible parts]."
+Give 1 line explaination.
 `;
 
   try {

@@ -11,10 +11,10 @@ import GeminiRoutes from './routes/gemini.route.js'
 
 
 const app = express();
-
+dotenv.config();
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: process.env.FRONTEND_URL,
   credentials: true,
 }));
 app.use(cookieParser());

@@ -58,24 +58,25 @@ export default function Navlinks() {
                 <Dropdown title="Accessories" items={accessories} />
                 <Dropdown title="Mr. PC" items={mrPCItems} />
                 <li className="nav-item">
-                    {!authUser ? (
-                        <Link to='/login' className="nav-link">Sign In</Link>
-                    ) : (
-                        <div 
-                            className='nav-link auth-user-wrapper font-audiowide' 
-                            onMouseEnter={() => setHovered(true)} 
-                            onMouseLeave={() => setHovered(false)}
-                        >
-                            Hello, {authUser.fullName.split(' ')[0]}
-                            {hovered && (
-                                <div className="logout-dropdown bg-teal-600">
-                                    <button className="logout-button" onClick={logout}>
-                                        Logout
-                                    </button>
-                                </div>
-                            )}
-                        </div>
-                    )}
+{!authUser ? (
+  <Link to='/login' className="nav-link">Sign In</Link>
+) : (
+  <div 
+    className='nav-link auth-user-wrapper font-audiowide' 
+    onMouseEnter={() => setHovered(true)} 
+    onMouseLeave={() => setHovered(false)}
+  >
+    Hello, {authUser?.fullName?.split(' ')[0] || 'User'}
+    {hovered && (
+      <div className="logout-dropdown bg-teal-600">
+        <button className="logout-button" onClick={logout}>
+          Logout
+        </button>
+      </div>
+    )}
+  </div>
+)}
+
                     <Link to="/checkout" className="nav-link cart-container">
                         <i className="gg-shopping-cart"></i>
                         {addedParts.length > 0 && (
