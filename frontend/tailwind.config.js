@@ -20,9 +20,9 @@ export default {
         audiowide : ["Audiowide", 'serif']
       },
       backgroundImage:{
-  'homepagebg' : "url('./src/images/homepagebg.png')",
-  'Edit': "url('./src/images/Edit.jpg')",
-  'Loginbg': "url('./src/images/Loginbg.jpg')",
+  'homepagebg' : "url('/images/homepagebg.png')",
+  'Edit': "url('/images/Edit.jpg')",
+  'Loginbg': "url('/images/Loginbg.jpg')",
 }
     },
   },
